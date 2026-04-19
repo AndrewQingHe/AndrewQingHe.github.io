@@ -35,17 +35,17 @@ const translations = {
     phdInstitution: "Southern Methodist University, Dedman College of Humanities and Sciences",
     phdPeriod: "2020 - Present",
     phdDesc:
-      "Conducting research in computational mathematics, focusing on deep learning methods for solving partial differential equations and developing stochastic computational algorithms.",
+      "Conducting research in computational mathematics under the supervision of Prof. Wei Cai, focusing on deep learning methods for solving partial differential equations and developing stochastic computational algorithms.",
     researchTitle: "Research Assistant",
     researchInstitution: "Beijing International Center of Mathematical Research (BICMR)",
     researchPeriod: "China",
     researchDesc:
-      "Contributed to research on numerical schemes for Fokker-Planck equations and structured neural networks.",
-    igemTitle: "iGEM Competition Participant",
-    igemInstitution: "International Genetically Engineered Machine Competition",
-    igemPeriod: "2019 - Team Peking",
-    igemDesc:
-      "Participated in synthetic biology competition, gaining hands-on experience in systems biology and interdisciplinary research.",
+      "Contributed to research on numerical schemes for Fokker-Planck equations and structured neural networks under the supervision of Prof. Zhennan Zhou (Westlake University).",
+    undergradTitle: "Undergraduate Student",
+    undergradInstitution: "Peking University, China",
+    undergradPeriod: "2016 - 2020",
+    undergradDesc:
+      "Bachelor's degree in Medical Experimental Technology, minor in Computer Science. Graduation supervisor: Prof. Tingting Li.",
     awardsTitle: "Awards & Recognition",
     award1Title: "Betty McKnight Speairs Graduate Student Award in Mathematics",
     award1Desc: "Recognition for teaching excellence",
@@ -84,15 +84,15 @@ const translations = {
     phdTitle: "数学博士候选人",
     phdInstitution: "南卫理公会大学，人文与科学学院",
     phdPeriod: "2020年至今",
-    phdDesc: "进行计算数学研究，专注于求解偏微分方程的深度学习方法和开发随机计算算法。",
+    phdDesc: "在蔡伟教授指导下进行计算数学研究，专注于求解偏微分方程的深度学习方法和开发随机计算算法。",
     researchTitle: "研究助理",
     researchInstitution: "北京国际数学研究中心 (BICMR)",
     researchPeriod: "中国",
-    researchDesc: "为Fokker-Planck方程和结构化神经网络的数值方案研究做出贡献。",
-    igemTitle: "iGEM竞赛参与者",
-    igemInstitution: "国际基因工程机器竞赛",
-    igemPeriod: "2019年 - 北京队",
-    igemDesc: "参与合成生物学竞赛，获得系统生物学和跨学科研究的实践经验。",
+    researchDesc: "在周珍楠教授（西湖大学）指导下，为Fokker-Planck方程和结构化神经网络的数值方案研究做出贡献。",
+    undergradTitle: "本科生",
+    undergradInstitution: "北京大学，中国",
+    undergradPeriod: "2016 - 2020",
+    undergradDesc: "医学实验技术学士学位，辅修计算机科学。毕业导师：李婷婷教授。",
     awardsTitle: "奖项与认可",
     award1Title: "Betty McKnight Speairs数学研究生奖",
     award1Desc: "教学优秀奖",
@@ -158,10 +158,10 @@ function updateLanguage(lang) {
   document.getElementById("researchInstitution").textContent = trans.researchInstitution;
   document.getElementById("researchPeriod").textContent = trans.researchPeriod;
   document.getElementById("researchDesc").textContent = trans.researchDesc;
-  document.getElementById("igemTitle").textContent = trans.igemTitle;
-  document.getElementById("igemInstitution").textContent = trans.igemInstitution;
-  document.getElementById("igemPeriod").textContent = trans.igemPeriod;
-  document.getElementById("igemDesc").textContent = trans.igemDesc;
+  document.getElementById("undergradTitle").textContent = trans.undergradTitle;
+  document.getElementById("undergradInstitution").textContent = trans.undergradInstitution;
+  document.getElementById("undergradPeriod").textContent = trans.undergradPeriod;
+  document.getElementById("undergradDesc").textContent = trans.undergradDesc;
 
   // Update awards section
   document.getElementById("awardsTitle").textContent = trans.awardsTitle;

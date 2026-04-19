@@ -204,7 +204,7 @@ title: Andrew Qing He - Computational Mathematics Researcher
             </h6>
             <p class="text-muted" id="phdPeriod">2020 - Present</p>
             <p id="phdDesc">
-              Conducting research in computational mathematics, focusing on deep learning methods for solving
+              Conducting research in computational mathematics under the supervision of <a href="https://www.smu.edu/dedman/academics/departments/mathematics/people/faculty/wei-cai" target="_blank">Prof. Wei Cai</a>, focusing on deep learning methods for solving
               partial differential equations and developing stochastic computational algorithms.
             </p>
           </div>
@@ -216,18 +216,18 @@ title: Andrew Qing He - Computational Mathematics Researcher
             <p class="text-muted" id="researchPeriod">China</p>
             <p id="researchDesc">
               Contributed to research on numerical schemes for Fokker-Planck equations and structured neural
-              networks.
+              networks under the supervision of <a href="https://person.zju.edu.cn/en/zhouzhennan" target="_blank">Prof. Zhennan Zhou</a> (Westlake University).
             </p>
           </div>
           <div class="timeline-item">
-            <h4 id="igemTitle">iGEM Competition Participant</h4>
-            <h6 class="text-muted" id="igemInstitution">
-              International Genetically Engineered Machine Competition
+            <h4 id="undergradTitle">Undergraduate Student</h4>
+            <h6 class="text-muted" id="undergradInstitution">
+              Peking University, China
             </h6>
-            <p class="text-muted" id="igemPeriod">2019 - Team Peking</p>
-            <p id="igemDesc">
-              Participated in synthetic biology competition, gaining hands-on experience in systems biology and
-              interdisciplinary research.
+            <p class="text-muted" id="undergradPeriod">2016 - 2020</p>
+            <p id="undergradDesc">
+              Bachelor's degree in Medical Experimental Technology, minor in Computer Science. Graduation supervisor: 
+              <a href="https://sbms.bjmu.edu.cn/English/Faculty/PrincipalInvestigators/FacultyTeacher1/Tingting_Li.html" target="_blank">Prof. Tingting Li</a>.
             </p>
           </div>
         </div>
