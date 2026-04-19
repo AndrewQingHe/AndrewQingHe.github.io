@@ -1,0 +1,57 @@
+<p>Welcome to my new research blog! This space will feature short articles on computational mathematics, machine learning for PDEs, stochastic methods, and scientific computing.</p>
+
+<h2 id="what-to-expect">What to Expect</h2>
+
+<p>In this blog, I’ll be sharing:</p>
+
+<ol>
+  <li><strong>Research insights</strong> from my work on deep learning methods for PDEs</li>
+  <li><strong>Tutorial-style articles</strong> on scientific computing techniques</li>
+  <li><strong>Updates</strong> on recent developments in computational mathematics</li>
+  <li><strong>Thoughts</strong> on the intersection of mathematics and machine learning</li>
+</ol>
+
+<h2 id="how-this-blog-works">How This Blog Works</h2>
+
+<p>This blog system is designed to be simple and flexible:</p>
+
+<ul>
+  <li>Articles are written in <strong>Markdown</strong> format</li>
+  <li>Each article includes metadata (title, date, author, tags)</li>
+  <li>The system automatically parses and displays articles</li>
+  <li>You can write new articles by creating Markdown files</li>
+</ul>
+
+<h2 id="example-code">Example Code</h2>
+
+<p>Here’s a simple Python example of a numerical method:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="k">def</span> <span class="nf">finite_difference</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
+    <span class="s">"""Compute finite difference approximation of derivative."""</span>
+    <span class="nf">return </span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># Example usage
+</span><span class="k">def</span> <span class="nf">example_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">x_value</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">derivative</span> <span class="o">=</span> <span class="nf">finite_difference</span><span class="p">(</span><span class="n">example_function</span><span class="p">,</span> <span class="n">x_value</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Derivative at x=</span><span class="si">{</span><span class="n">x_value</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">derivative</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="looking-ahead">Looking Ahead</h2>
+
+<p>I’m excited to share more content on topics like:</p>
+
+<ul>
+  <li><strong>DeepMartNet</strong> for solving elliptic PDEs</li>
+  <li><strong>Weak adversarial training</strong> for Fokker-Planck equations</li>
+  <li><strong>Stochastic computing</strong> methods</li>
+  <li><strong>Geometric approaches</strong> to machine learning</li>
+</ul>
+
+<p>Stay tuned for more articles, and feel free to reach out with questions or suggestions!</p>
+
+<p><em>Andrew Qing He</em></p>

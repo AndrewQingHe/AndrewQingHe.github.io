@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-04-19T00:59:11-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Andrew Qing He - Personal Website</title><subtitle>Personal website and research blog of Andrew Qing He</subtitle><entry><title type="html">Welcome to the Research Blog</title><link href="http://localhost:4000/2024/03/20/welcome-to-the-research-blog.html" rel="alternate" type="text/html" title="Welcome to the Research Blog" /><published>2024-03-20T00:00:00-05:00</published><updated>2024-03-20T00:00:00-05:00</updated><id>http://localhost:4000/2024/03/20/welcome-to-the-research-blog</id><content type="html" xml:base="http://localhost:4000/2024/03/20/welcome-to-the-research-blog.html"><![CDATA[<p>Welcome to my new research blog! This space will feature short articles on computational mathematics, machine learning for PDEs, stochastic methods, and scientific computing.</p>
+
+<h2 id="what-to-expect">What to Expect</h2>
+
+<p>In this blog, I’ll be sharing:</p>
+
+<ol>
+  <li><strong>Research insights</strong> from my work on deep learning methods for PDEs</li>
+  <li><strong>Tutorial-style articles</strong> on scientific computing techniques</li>
+  <li><strong>Updates</strong> on recent developments in computational mathematics</li>
+  <li><strong>Thoughts</strong> on the intersection of mathematics and machine learning</li>
+</ol>
+
+<h2 id="how-this-blog-works">How This Blog Works</h2>
+
+<p>This blog system is designed to be simple and flexible:</p>
+
+<ul>
+  <li>Articles are written in <strong>Markdown</strong> format</li>
+  <li>Each article includes metadata (title, date, author, tags)</li>
+  <li>The system automatically parses and displays articles</li>
+  <li>You can write new articles by creating Markdown files</li>
+</ul>
+
+<h2 id="example-code">Example Code</h2>
+
+<p>Here’s a simple Python example of a numerical method:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="k">def</span> <span class="nf">finite_difference</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
+    <span class="s">"""Compute finite difference approximation of derivative."""</span>
+    <span class="nf">return </span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># Example usage
+</span><span class="k">def</span> <span class="nf">example_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">x_value</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">derivative</span> <span class="o">=</span> <span class="nf">finite_difference</span><span class="p">(</span><span class="n">example_function</span><span class="p">,</span> <span class="n">x_value</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Derivative at x=</span><span class="si">{</span><span class="n">x_value</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">derivative</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="looking-ahead">Looking Ahead</h2>
+
+<p>I’m excited to share more content on topics like:</p>
+
+<ul>
+  <li><strong>DeepMartNet</strong> for solving elliptic PDEs</li>
+  <li><strong>Weak adversarial training</strong> for Fokker-Planck equations</li>
+  <li><strong>Stochastic computing</strong> methods</li>
+  <li><strong>Geometric approaches</strong> to machine learning</li>
+</ul>
+
+<p>Stay tuned for more articles, and feel free to reach out with questions or suggestions!</p>
+
+<p><em>Andrew Qing He</em></p>]]></content><author><name>Andrew Qing He</name></author><category term="Announcement" /><category term="Blog" /><category term="Research" /><summary type="html"><![CDATA[Welcome to my new research blog! This space will feature short articles on computational mathematics, machine learning for PDEs, stochastic methods, and scientific computing.]]></summary></entry><entry><title type="html">Introduction to Deep Learning for PDEs</title><link href="http://localhost:4000/2024/03/15/introduction-to-deep-learning-for-pdes.html" rel="alternate" type="text/html" title="Introduction to Deep Learning for PDEs" /><published>2024-03-15T00:00:00-05:00</published><updated>2024-03-15T00:00:00-05:00</updated><id>http://localhost:4000/2024/03/15/introduction-to-deep-learning-for-pdes</id><content type="html" xml:base="http://localhost:4000/2024/03/15/introduction-to-deep-learning-for-pdes.html"><![CDATA[<h1 id="introduction-to-deep-learning-for-pdes">Introduction to Deep Learning for PDEs</h1>
+
+<p>Partial Differential Equations (PDEs) are fundamental to modeling physical phenomena across science and engineering. Traditional numerical methods like finite difference, finite element, and spectral methods have been the workhorses for decades. However, deep learning offers new possibilities.</p>
+
+<h2 id="why-deep-learning-for-pdes">Why Deep Learning for PDEs?</h2>
+
+<p>Deep neural networks can approximate complex functions with high accuracy. When applied to PDEs, they offer several advantages:</p>
+
+<ol>
+  <li><strong>Mesh-free solutions</strong>: Unlike traditional methods that require discretization grids</li>
+  <li><strong>High-dimensional problems</strong>: Neural networks can handle problems in higher dimensions</li>
+  <li><strong>Inverse problems</strong>: Can solve parameter estimation problems more efficiently</li>
+</ol>
+
+<h2 id="key-approaches">Key Approaches</h2>
+
+<h3 id="physics-informed-neural-networks-pinns">Physics-Informed Neural Networks (PINNs)</h3>
+
+<p>PINNs incorporate the PDE directly into the loss function, enforcing physical constraints during training.</p>
+
+<h3 id="deepmartnet">DeepMartNet</h3>
+
+<p>Our recent work on DeepMartNet uses martingale theory to solve elliptic PDEs and eigenvalue problems.</p>
+
+<h2 id="challenges-and-future-directions">Challenges and Future Directions</h2>
+
+<p>While promising, challenges remain in training stability, error estimation, and computational cost for large-scale problems.</p>
+
+<h2 id="example-code">Example Code</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">torch</span>
+<span class="kn">import</span> <span class="n">torch.nn</span> <span class="k">as</span> <span class="n">nn</span>
+
+<span class="k">class</span> <span class="nc">PINN</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">layers</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">(</span><span class="n">PINN</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">ModuleList</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nf">len</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span>
+                <span class="n">self</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="nc">Tanh</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">layers</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="nf">layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+<span class="c1"># Example network for solving 1D Poisson equation
+</span><span class="n">pinn</span> <span class="o">=</span> <span class="nc">PINN</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Deep learning methods for PDEs represent an exciting frontier in computational mathematics, combining the expressive power of neural networks with physical constraints to solve challenging problems.</p>]]></content><author><name>Andrew Qing He</name></author><category term="Deep Learning" /><category term="PDEs" /><category term="Scientific Computing" /><summary type="html"><![CDATA[Introduction to Deep Learning for PDEs]]></summary></entry><entry><title type="html">Stochastic Methods in Scientific Computing</title><link href="http://localhost:4000/2024/02/28/stochastic-methods-in-scientific-computing.html" rel="alternate" type="text/html" title="Stochastic Methods in Scientific Computing" /><published>2024-02-28T00:00:00-06:00</published><updated>2024-02-28T00:00:00-06:00</updated><id>http://localhost:4000/2024/02/28/stochastic-methods-in-scientific-computing</id><content type="html" xml:base="http://localhost:4000/2024/02/28/stochastic-methods-in-scientific-computing.html"><![CDATA[<h1 id="stochastic-methods-in-scientific-computing">Stochastic Methods in Scientific Computing</h1>
+
+<p>Stochastic methods provide powerful tools for tackling problems that are difficult or impossible to solve deterministically.</p>
+
+<h2 id="monte-carlo-methods">Monte Carlo Methods</h2>
+
+<p>The classic Monte Carlo approach uses random sampling to estimate integrals, solve optimization problems, and simulate complex systems.</p>
+
+<h3 id="basic-monte-carlo-integration">Basic Monte Carlo Integration</h3>
+
+<p>To estimate the integral of a function f(x) over domain D:</p>
+
+<ol>
+  <li>Generate N random points uniformly in D</li>
+  <li>Compute f(x) at each point</li>
+  <li>Average the results and multiply by the volume of D</li>
+</ol>
+
+<h2 id="gillespie-algorithm">Gillespie Algorithm</h2>
+
+<p>For chemical reaction networks and biological systems, the Gillespie algorithm provides exact stochastic simulation of reaction dynamics.</p>
+
+<p>The algorithm works by:</p>
+
+<ol>
+  <li>Calculating reaction propensities</li>
+  <li>Determining the time to the next reaction (exponentially distributed)</li>
+  <li>Selecting which reaction occurs (weighted by propensities)</li>
+  <li>Updating species counts and time</li>
+</ol>
+
+<h2 id="stochastic-differential-equations-sdes">Stochastic Differential Equations (SDEs)</h2>
+
+<p>SDEs model systems with inherent randomness, from financial markets to particle diffusion:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dX_t = μ(X_t, t)dt + σ(X_t, t)dW_t
+</code></pre></div></div>
+
+<p>Where:</p>
+
+<ul>
+  <li>X_t is the stochastic process</li>
+  <li>μ is the drift coefficient</li>
+  <li>σ is the diffusion coefficient</li>
+  <li>W_t is a Wiener process (Brownian motion)</li>
+</ul>
+
+<h2 id="applications-in-machine-learning">Applications in Machine Learning</h2>
+
+<p>Stochastic gradient descent, the workhorse of deep learning, is itself a stochastic optimization method. The randomness in mini-batch selection helps escape local minima and improves generalization.</p>
+
+<h2 id="example-monte-carlo-pi-estimation">Example: Monte Carlo Pi Estimation</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">random</span>
+
+<span class="k">def</span> <span class="nf">estimate_pi</span><span class="p">(</span><span class="n">num_samples</span><span class="o">=</span><span class="mi">1000000</span><span class="p">):</span>
+    <span class="n">inside_circle</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">num_samples</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">inside_circle</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">inside_circle</span> <span class="o">/</span> <span class="n">num_samples</span>
+
+<span class="c1"># Estimate π using Monte Carlo
+</span><span class="n">pi_estimate</span> <span class="o">=</span> <span class="nf">estimate_pi</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Estimated π: </span><span class="si">{</span><span class="n">pi_estimate</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="advantages-of-stochastic-methods">Advantages of Stochastic Methods</h2>
+
+<ol>
+  <li><strong>Parallelizability</strong>: Many stochastic algorithms are embarrassingly parallel</li>
+  <li><strong>Scalability</strong>: Often scale better than deterministic methods for high-dimensional problems</li>
+  <li><strong>Robustness</strong>: Can handle noisy or incomplete data</li>
+  <li><strong>Theoretical guarantees</strong>: Many methods have convergence proofs</li>
+</ol>
+
+<h2 id="challenges">Challenges</h2>
+
+<ol>
+  <li><strong>Variance</strong>: Stochastic methods introduce variance that must be controlled</li>
+  <li><strong>Convergence</strong>: May require many samples for accurate results</li>
+  <li><strong>Tuning</strong>: Parameters like step sizes often need careful tuning</li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Stochastic methods continue to be essential tools in scientific computing, with applications ranging from molecular dynamics to machine learning optimization.</p>]]></content><author><name>Andrew Qing He</name></author><category term="Stochastic Methods" /><category term="Scientific Computing" /><category term="Mathematics" /><summary type="html"><![CDATA[Stochastic Methods in Scientific Computing]]></summary></entry><entry><title type="html">Neural Pushforward Samplers for Fokker-Planck Equations</title><link href="http://localhost:4000/2024/01/10/neural-pushforward-samplers-for-fokker-planck-equations.html" rel="alternate" type="text/html" title="Neural Pushforward Samplers for Fokker-Planck Equations" /><published>2024-01-10T00:00:00-06:00</published><updated>2024-01-10T00:00:00-06:00</updated><id>http://localhost:4000/2024/01/10/neural-pushforward-samplers-for-fokker-planck-equations</id><content type="html" xml:base="http://localhost:4000/2024/01/10/neural-pushforward-samplers-for-fokker-planck-equations.html"><![CDATA[<h1 id="neural-pushforward-samplers-for-fokker-planck-equations">Neural Pushforward Samplers for Fokker-Planck Equations</h1>
+
+<p>The Fokker-Planck equation describes the time evolution of probability density functions in stochastic systems. Solving it numerically is challenging, especially in high dimensions.</p>
+
+<h2 id="the-fokker-planck-equation">The Fokker-Planck Equation</h2>
+
+<p>For a stochastic process described by the SDE:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dX_t = μ(X_t, t)dt + σ(X_t, t)dW_t
+</code></pre></div></div>
+
+<p>The corresponding Fokker-Planck equation for the probability density p(x, t) is:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>∂p/∂t = -∇·[μ(x, t)p] + ½∇·∇:[σ(x, t)σ(x, t)^T p]
+</code></pre></div></div>
+
+<h2 id="the-pushforward-approach">The Pushforward Approach</h2>
+
+<p>Instead of directly approximating the density function p(x, t), we learn a neural network T that maps from a simple reference distribution (like Gaussian) to the target distribution.</p>
+
+<h3 id="mathematical-formulation">Mathematical Formulation</h3>
+
+<p>Let Z ∼ ρ (reference distribution, e.g., N(0, I))
+Let X = T(Z) where T is a neural network
+Then X ∼ T#ρ (pushforward measure)</p>
+
+<p>We want T#ρ ≈ p, the solution of the Fokker-Planck equation.</p>
+
+<h2 id="weak-adversarial-training">Weak Adversarial Training</h2>
+
+<p>We use a weak adversarial formulation where a critic network φ learns to distinguish between samples from the pushforward distribution and the true distribution.</p>
+
+<p>The training objective minimizes:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>L(T, φ) = E[φ(T(Z))] - E[φ(X)] + λ·R(φ)
+</code></pre></div></div>
+
+<p>Where R(φ) is a regularization term enforcing that φ is in a suitable function space (e.g., Sobolev space).</p>
+
+<h2 id="advantages">Advantages</h2>
+
+<ol>
+  <li><strong>Sample generation</strong>: Directly generates samples from the solution</li>
+  <li><strong>High dimensions</strong>: Scales better than grid-based methods (avoids curse of dimensionality)</li>
+  <li><strong>Mesh-free</strong>: No need for spatial discretization</li>
+  <li><strong>Parallelizable</strong>: Training can be distributed across multiple GPUs</li>
+</ol>
+
+<h2 id="implementation-example">Implementation Example</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">torch</span>
+<span class="kn">import</span> <span class="n">torch.nn</span> <span class="k">as</span> <span class="n">nn</span>
+
+<span class="k">class</span> <span class="nc">PushforwardNetwork</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dims</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">().</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">dims</span> <span class="o">=</span> <span class="p">[</span><span class="n">input_dim</span><span class="p">]</span> <span class="o">+</span> <span class="n">hidden_dims</span> <span class="o">+</span> <span class="p">[</span><span class="n">output_dim</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">dims</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">layers</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="n">dims</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dims</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nf">len</span><span class="p">(</span><span class="n">dims</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span>
+                <span class="n">layers</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="nc">Tanh</span><span class="p">())</span>
+
+        <span class="n">self</span><span class="p">.</span><span class="n">net</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Sequential</span><span class="p">(</span><span class="o">*</span><span class="n">layers</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">net</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">CriticNetwork</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dims</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">().</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">layers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">dims</span> <span class="o">=</span> <span class="p">[</span><span class="n">input_dim</span><span class="p">]</span> <span class="o">+</span> <span class="n">hidden_dims</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">dims</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">layers</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="n">dims</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dims</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nf">len</span><span class="p">(</span><span class="n">dims</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span>
+                <span class="n">layers</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="nc">Tanh</span><span class="p">())</span>
+
+        <span class="n">self</span><span class="p">.</span><span class="n">net</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Sequential</span><span class="p">(</span><span class="o">*</span><span class="n">layers</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">net</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="results">Results</h2>
+
+<p>Our method shows promising results on:</p>
+
+<ol>
+  <li><strong>Fractional Fokker-Planck equations</strong>: Incorporating fractional derivatives</li>
+  <li><strong>McKean-Vlasov equations</strong>: Mean-field models with interaction terms</li>
+  <li><strong>High-dimensional problems</strong>: Up to 100 dimensions in our experiments</li>
+</ol>
+
+<h2 id="comparison-with-traditional-methods">Comparison with Traditional Methods</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Dimensionality</th>
+      <th>Sample Generation</th>
+      <th>Computational Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Finite Difference</td>
+      <td>Low (≤3)</td>
+      <td>No</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Monte Carlo</td>
+      <td>Medium</td>
+      <td>Yes</td>
+      <td>Medium</td>
+    </tr>
+    <tr>
+      <td>Neural Pushforward</td>
+      <td>High (≥10)</td>
+      <td>Yes</td>
+      <td>Medium-High</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="future-directions">Future Directions</h2>
+
+<ol>
+  <li><strong>Theoretical analysis</strong>: Better understanding of convergence properties</li>
+  <li><strong>Architecture design</strong>: More efficient network architectures</li>
+  <li><strong>Applications</strong>: Extending to other classes of PDEs</li>
+  <li><strong>Uncertainty quantification</strong>: Incorporating uncertainty in the learned sampler</li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Neural pushforward samplers represent a promising approach for solving high-dimensional Fokker-Planck equations, combining the expressive power of deep neural networks with rigorous mathematical formulations from optimal transport theory.</p>]]></content><author><name>Andrew Qing He</name></author><category term="Deep Learning" /><category term="PDEs" /><category term="Stochastic Methods" /><category term="Research" /><summary type="html"><![CDATA[Neural Pushforward Samplers for Fokker-Planck Equations]]></summary></entry></feed>

@@ -1,0 +1,54 @@
+<h1 id="introduction-to-deep-learning-for-pdes">Introduction to Deep Learning for PDEs</h1>
+
+<p>Partial Differential Equations (PDEs) are fundamental to modeling physical phenomena across science and engineering. Traditional numerical methods like finite difference, finite element, and spectral methods have been the workhorses for decades. However, deep learning offers new possibilities.</p>
+
+<h2 id="why-deep-learning-for-pdes">Why Deep Learning for PDEs?</h2>
+
+<p>Deep neural networks can approximate complex functions with high accuracy. When applied to PDEs, they offer several advantages:</p>
+
+<ol>
+  <li><strong>Mesh-free solutions</strong>: Unlike traditional methods that require discretization grids</li>
+  <li><strong>High-dimensional problems</strong>: Neural networks can handle problems in higher dimensions</li>
+  <li><strong>Inverse problems</strong>: Can solve parameter estimation problems more efficiently</li>
+</ol>
+
+<h2 id="key-approaches">Key Approaches</h2>
+
+<h3 id="physics-informed-neural-networks-pinns">Physics-Informed Neural Networks (PINNs)</h3>
+
+<p>PINNs incorporate the PDE directly into the loss function, enforcing physical constraints during training.</p>
+
+<h3 id="deepmartnet">DeepMartNet</h3>
+
+<p>Our recent work on DeepMartNet uses martingale theory to solve elliptic PDEs and eigenvalue problems.</p>
+
+<h2 id="challenges-and-future-directions">Challenges and Future Directions</h2>
+
+<p>While promising, challenges remain in training stability, error estimation, and computational cost for large-scale problems.</p>
+
+<h2 id="example-code">Example Code</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">torch</span>
+<span class="kn">import</span> <span class="n">torch.nn</span> <span class="k">as</span> <span class="n">nn</span>
+
+<span class="k">class</span> <span class="nc">PINN</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">layers</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">(</span><span class="n">PINN</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">ModuleList</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">layers</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nf">len</span><span class="p">(</span><span class="n">layers</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span>
+                <span class="n">self</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="nc">Tanh</span><span class="p">())</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">layers</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="nf">layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+<span class="c1"># Example network for solving 1D Poisson equation
+</span><span class="n">pinn</span> <span class="o">=</span> <span class="nc">PINN</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Deep learning methods for PDEs represent an exciting frontier in computational mathematics, combining the expressive power of neural networks with physical constraints to solve challenging problems.</p>

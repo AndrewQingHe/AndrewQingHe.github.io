@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<div class="container mt-5 pt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <article class="blog-post">
+        <header class="blog-post-header mb-5">
+          <h1 class="display-4 fw-bold mb-3">{{ page.title }}</h1>
+          <div class="blog-post-meta mb-4">
+            <div class="d-flex align-items-center flex-wrap gap-3">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-calendar text-primary me-2"></i>
+                <time datetime="{{ page.date | date_to_xmlschema }}" class="text-muted">
+                  {{ page.date | date: "%B %-d, %Y" }}
+                </time>
+              </div>
+              <div class="d-flex align-items-center">
+                <i class="fas fa-user text-primary me-2"></i>
+                <span class="text-muted">{{ page.author | default: site.author }}</span>
+              </div>
+              {% if page.tags %}
+              <div class="d-flex align-items-center">
+                <i class="fas fa-tags text-primary me-2"></i>
+                <div class="blog-post-tags">
+                  {% for tag in page.tags %}
+                  <span class="badge bg-primary me-1">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </header>
+
+        <div class="blog-post-content mb-5">{{ content }}</div>
+
+        <footer class="blog-post-footer border-top pt-4">
+          <nav class="post-navigation d-flex justify-content-between">
+            {% if page.previous %}
+            <a href="{{ page.previous.url | relative_url }}" class="btn btn-outline-primary">
+              <i class="fas fa-arrow-left me-2"></i> Previous: {{ page.previous.title | truncate: 40 }}
+            </a>
+            {% else %}
+            <div></div>
+            {% endif %} {% if page.next %}
+            <a href="{{ page.next.url | relative_url }}" class="btn btn-outline-primary">
+              Next: {{ page.next.title | truncate: 40 }} <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+            {% endif %}
+          </nav>
+        </footer>
+      </article>
+    </div>
+  </div>
+</div>

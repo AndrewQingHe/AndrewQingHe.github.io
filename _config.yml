@@ -1,0 +1,63 @@
+# Site settings
+title: "Andrew Qing He - Personal Website"
+email: "your-email@example.com"
+description: "Personal website and research blog of Andrew Qing He"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://AndrewQingHe.github.io" # the base hostname & protocol for your site
+github_username: AndrewQingHe
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Minima theme settings
+minima:
+  skin: auto
+  date_format: "%B %-d, %Y"
+
+# Collections
+collections:
+  blog:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "blog"
+    values:
+      layout: "post"
+      author: "Andrew Qing He"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .git/
+  - .gitignore
+  - .vscode/
+
+# SEO
+seo:
+  type: "Person"
+  name: "Andrew Qing He"
+  links:
+    - "https://github.com/AndrewQingHe"
+    - "https://linkedin.com/in/andrewqinghe"
+
+# Sitemap
+sitemap: true

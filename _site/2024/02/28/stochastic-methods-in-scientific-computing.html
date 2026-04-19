@@ -1,0 +1,92 @@
+<h1 id="stochastic-methods-in-scientific-computing">Stochastic Methods in Scientific Computing</h1>
+
+<p>Stochastic methods provide powerful tools for tackling problems that are difficult or impossible to solve deterministically.</p>
+
+<h2 id="monte-carlo-methods">Monte Carlo Methods</h2>
+
+<p>The classic Monte Carlo approach uses random sampling to estimate integrals, solve optimization problems, and simulate complex systems.</p>
+
+<h3 id="basic-monte-carlo-integration">Basic Monte Carlo Integration</h3>
+
+<p>To estimate the integral of a function f(x) over domain D:</p>
+
+<ol>
+  <li>Generate N random points uniformly in D</li>
+  <li>Compute f(x) at each point</li>
+  <li>Average the results and multiply by the volume of D</li>
+</ol>
+
+<h2 id="gillespie-algorithm">Gillespie Algorithm</h2>
+
+<p>For chemical reaction networks and biological systems, the Gillespie algorithm provides exact stochastic simulation of reaction dynamics.</p>
+
+<p>The algorithm works by:</p>
+
+<ol>
+  <li>Calculating reaction propensities</li>
+  <li>Determining the time to the next reaction (exponentially distributed)</li>
+  <li>Selecting which reaction occurs (weighted by propensities)</li>
+  <li>Updating species counts and time</li>
+</ol>
+
+<h2 id="stochastic-differential-equations-sdes">Stochastic Differential Equations (SDEs)</h2>
+
+<p>SDEs model systems with inherent randomness, from financial markets to particle diffusion:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dX_t = μ(X_t, t)dt + σ(X_t, t)dW_t
+</code></pre></div></div>
+
+<p>Where:</p>
+
+<ul>
+  <li>X_t is the stochastic process</li>
+  <li>μ is the drift coefficient</li>
+  <li>σ is the diffusion coefficient</li>
+  <li>W_t is a Wiener process (Brownian motion)</li>
+</ul>
+
+<h2 id="applications-in-machine-learning">Applications in Machine Learning</h2>
+
+<p>Stochastic gradient descent, the workhorse of deep learning, is itself a stochastic optimization method. The randomness in mini-batch selection helps escape local minima and improves generalization.</p>
+
+<h2 id="example-monte-carlo-pi-estimation">Example: Monte Carlo Pi Estimation</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">random</span>
+
+<span class="k">def</span> <span class="nf">estimate_pi</span><span class="p">(</span><span class="n">num_samples</span><span class="o">=</span><span class="mi">1000000</span><span class="p">):</span>
+    <span class="n">inside_circle</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">num_samples</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">inside_circle</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">inside_circle</span> <span class="o">/</span> <span class="n">num_samples</span>
+
+<span class="c1"># Estimate π using Monte Carlo
+</span><span class="n">pi_estimate</span> <span class="o">=</span> <span class="nf">estimate_pi</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Estimated π: </span><span class="si">{</span><span class="n">pi_estimate</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="advantages-of-stochastic-methods">Advantages of Stochastic Methods</h2>
+
+<ol>
+  <li><strong>Parallelizability</strong>: Many stochastic algorithms are embarrassingly parallel</li>
+  <li><strong>Scalability</strong>: Often scale better than deterministic methods for high-dimensional problems</li>
+  <li><strong>Robustness</strong>: Can handle noisy or incomplete data</li>
+  <li><strong>Theoretical guarantees</strong>: Many methods have convergence proofs</li>
+</ol>
+
+<h2 id="challenges">Challenges</h2>
+
+<ol>
+  <li><strong>Variance</strong>: Stochastic methods introduce variance that must be controlled</li>
+  <li><strong>Convergence</strong>: May require many samples for accurate results</li>
+  <li><strong>Tuning</strong>: Parameters like step sizes often need careful tuning</li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Stochastic methods continue to be essential tools in scientific computing, with applications ranging from molecular dynamics to machine learning optimization.</p>
