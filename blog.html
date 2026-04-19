@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - Andrew Qing He</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+      <button class="btn btn-outline-primary btn-sm" id="langToggle"><i class="fas fa-language"></i> 中文</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+          <span id="navName">Andrew Qing He</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#home" id="navHome">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#research" id="navResearch">Research</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#publications" id="navPublications">Publications</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#experience" id="navExperience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="blog.html" id="navBlog">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="blog-header-section text-center py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 class="display-4 fw-bold mb-3" id="blogTitle">Blog</h1>
+            <p class="lead mb-4" id="blogSubtitle">Thoughts on computational mathematics, research, and technology</p>
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <p class="mb-0" id="blogDescription">
+                  Welcome to my research blog where I share insights, methodologies, and developments in computational
+                  mathematics and scientific computing.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section class="section">
+      <div class="container">
+        <div id="blogPosts">
+          <!-- Blog posts will be loaded here dynamically -->
+          <div class="text-center">
+            <div class="spinner-border text-primary" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2" id="blogLoading">Loading blog posts...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+      <div class="container text-center">
+        <p class="mb-0" id="footerText">&copy; 2024 Andrew Qing He (何清). All rights reserved.</p>
+        <div class="mt-3">
+          <a href="https://github.com/AndrewQingHe" class="text-light me-3" target="_blank">
+            <i class="fab fa-github fa-lg"></i>
+          </a>
+          <a href="https://scholar.google.com/" class="text-light me-3" target="_blank">
+            <i class="fas fa-graduation-cap fa-lg"></i>
+          </a>
+          <a href="mailto:your.email@smail.smu.edu" class="text-light">
+            <i class="fas fa-envelope fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="blog.js"></script>
+  </body>
+</html>

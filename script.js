@@ -52,8 +52,6 @@ const translations = {
     award1Desc: "Recognition for teaching excellence",
     award2Title: "SMU Research and Innovation Week Award",
     award2Desc: "Winner in AI for Scientific Computing category",
-    blogTitle: "Blog",
-    blogSubtitle: "Thoughts on computational mathematics, research, and technology",
     footerText: "&copy; 2024 Andrew Qing He (何清). All rights reserved.",
   },
   zh: {
@@ -101,8 +99,6 @@ const translations = {
     award1Desc: "教学优秀奖",
     award2Title: "SMU研究与创新周奖",
     award2Desc: "人工智能科学计算类别获奖者",
-    blogTitle: "博客",
-    blogSubtitle: "关于计算数学、研究和技术的心得",
     footerText: "&copy; 2024 何清 (Andrew Qing He). 版权所有。",
   },
 };
@@ -120,7 +116,8 @@ function updateLanguage(lang) {
   document.getElementById("navHome").textContent = trans.navHome;
   document.getElementById("navResearch").textContent = trans.navResearch;
   document.getElementById("navPublications").textContent = trans.navPublications;
-  document.getElementById("navExperience").textContent = trans.navExperience;  document.getElementById('navBlog').textContent = trans.navBlog;
+  document.getElementById("navExperience").textContent = trans.navExperience;
+  document.getElementById("navBlog").textContent = trans.navBlog;
   // Update hero section
   document.getElementById("heroTitle").textContent = trans.heroTitle;
   document.getElementById("heroSubtitle").textContent = trans.heroSubtitle;
@@ -168,9 +165,6 @@ function updateLanguage(lang) {
   document.getElementById("award1Desc").textContent = trans.award1Desc;
   document.getElementById("award2Title").textContent = trans.award2Title;
   document.getElementById("award2Desc").textContent = trans.award2Desc;
-  // Update blog section
-  document.getElementById('blogTitle').textContent = trans.blogTitle;
-  document.getElementById('blogSubtitle').textContent = trans.blogSubtitle;
   // Update footer
   document.getElementById("footerText").innerHTML = trans.footerText;
 
@@ -180,10 +174,11 @@ function updateLanguage(lang) {
   // Update toggle button
   langToggle.innerHTML = `<i class="fas fa-language"></i> ${lang === "en" ? "中文" : "English"}`;
 }
-// Blog functionality
+
+// Event listeners
 async function loadBlogPosts() {
-  const blogPostsContainer = document.getElementById('blogPosts');
-  const loadingElement = document.getElementById('blogLoading');
+  const blogPostsContainer = document.getElementById("blogPosts");
+  const loadingElement = document.getElementById("blogLoading");
 
   try {
     // For GitHub Pages, we'll simulate loading from blog_articles directory
@@ -192,25 +187,27 @@ async function loadBlogPosts() {
       {
         title: "Introduction to Neural Pushforward Samplers",
         date: "2026-04-18",
-        excerpt: "Exploring the latest developments in neural pushforward methods for solving Fokker-Planck equations...",
+        excerpt:
+          "Exploring the latest developments in neural pushforward methods for solving Fokker-Planck equations...",
         filename: "blog_articles/neural-pushforward-samplers.md",
-        content: null
+        content: null,
       },
       {
         title: "Deep Learning Approaches to Partial Differential Equations",
         date: "2026-03-15",
-        excerpt: "A comprehensive overview of how deep neural networks are revolutionizing partial differential equation solving...",
+        excerpt:
+          "A comprehensive overview of how deep neural networks are revolutionizing partial differential equation solving...",
         filename: "blog_articles/deep-learning-pdes.md",
-        content: null
-      }
+        content: null,
+      },
     ];
 
-    let postsHTML = '';
+    let postsHTML = "";
 
     if (blogPosts.length === 0) {
       postsHTML = '<div class="text-center"><p>No blog posts yet. Check back soon!</p></div>';
     } else {
-      blogPosts.forEach(post => {
+      blogPosts.forEach((post) => {
         postsHTML += `
           <div class="blog-post-item mb-4 p-4 bg-white rounded shadow-sm fade-in">
             <h4 class="blog-post-title">${post.title}</h4>
@@ -225,26 +222,26 @@ async function loadBlogPosts() {
     }
 
     blogPostsContainer.innerHTML = postsHTML;
-
   } catch (error) {
-    console.error('Error loading blog posts:', error);
-    blogPostsContainer.innerHTML = '<div class="text-center"><p>Error loading blog posts. Please try again later.</p></div>';
+    console.error("Error loading blog posts:", error);
+    blogPostsContainer.innerHTML =
+      '<div class="text-center"><p>Error loading blog posts. Please try again later.</p></div>';
   }
 }
 
 function formatDate(dateString) {
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
+  return date.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
   });
 }
 
 function loadBlogPost(filename) {
   // For GitHub Pages, we'll load the markdown content
   // In a real implementation, this would fetch the file from the repository
-  const blogPostsContainer = document.getElementById('blogPosts');
+  const blogPostsContainer = document.getElementById("blogPosts");
 
   // Sample content for demonstration
   const sampleContent = {
@@ -338,7 +335,7 @@ We're applying these methods to:
 - Uncertainty quantification in neural PDE solvers
 - Extension to stochastic PDEs
 
-*Stay tuned for updates on our latest results!*`
+*Stay tuned for updates on our latest results!*`,
   };
 
   const content = sampleContent[filename];
@@ -400,5 +397,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Initialize with English
   updateLanguage("en");
-  // Load blog posts
-  loadBlogPosts();});
+});

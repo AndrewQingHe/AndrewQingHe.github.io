@@ -177,9 +177,30 @@ body.chinese {
   }
 }
 
+/* Blog header styling */
+.blog-header-section {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  color: white;
+  padding: 80px 0;
+  margin-top: -76px; /* Account for fixed navbar */
+  padding-top: 156px; /* Add back the padding */
+}
+
+.blog-header-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.blog-header-section .lead {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
 /* Blog styles */
 .blog-post-item {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .blog-post-item:hover {
@@ -247,7 +268,7 @@ body.chinese {
   background: #f4f4f4;
   padding: 0.2rem 0.4rem;
   border-radius: 3px;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
   font-size: 0.9em;
 }
 

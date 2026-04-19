@@ -17,6 +17,7 @@ Recent advances in deep learning have opened new avenues for PDE solution method
 ### Physics-Informed Neural Networks (PINNs)
 
 PINNs incorporate physical laws directly into the neural network training process through:
+
 - Residual loss terms enforcing PDE constraints
 - Boundary/initial condition enforcement
 - Automatic differentiation for computing derivatives
@@ -24,6 +25,7 @@ PINNs incorporate physical laws directly into the neural network training proces
 ### Deep Operator Networks
 
 These networks learn mappings between function spaces, enabling:
+
 - Solution of parametric PDE families
 - Real-time prediction for varying parameters
 - Reduced computational cost for similar problems
@@ -35,6 +37,7 @@ Our research focuses on developing specialized architectures for PDE problems:
 ### DeepMartNet
 
 A martingale-based neural network approach for solving boundary value problems of elliptic PDEs. Key features:
+
 - Guaranteed convergence properties
 - Efficient handling of complex boundary conditions
 - Scalable to high dimensions
@@ -42,6 +45,7 @@ A martingale-based neural network approach for solving boundary value problems o
 ### Applications in Computational Mathematics
 
 We're applying these methods to:
+
 - Eigenvalue problems
 - Time-dependent PDEs
 - Coupled multi-physics systems
@@ -52,4 +56,4 @@ We're applying these methods to:
 - Uncertainty quantification in neural PDE solvers
 - Extension to stochastic PDEs
 
-*Stay tuned for updates on our latest results!*
+_Stay tuned for updates on our latest results!_

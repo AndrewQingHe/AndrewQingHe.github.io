@@ -21,6 +21,7 @@ Our approach uses neural networks to learn a pushforward map that transforms a s
 ## Applications
 
 This technique has applications in:
+
 - Financial mathematics (option pricing, risk management)
 - Molecular dynamics (protein folding simulations)
 - Climate modeling (atmospheric flow simulations)
@@ -29,8 +30,9 @@ This technique has applications in:
 ## Future Directions
 
 We're currently extending this work to:
+
 - Time-dependent Fokker-Planck equations
 - Multi-scale problems
 - Integration with existing PDE solvers
 
-*This post will be updated as our research progresses.*
+_This post will be updated as our research progresses._
