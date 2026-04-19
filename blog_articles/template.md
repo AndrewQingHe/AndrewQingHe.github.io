@@ -1,6 +1,6 @@
 ---
 title: Your Article Title Here
-date: YYYY-MM-DD
+date: 2024-03-20
 author: Your Name
 tags: Tag1, Tag2, Tag3
 ---
