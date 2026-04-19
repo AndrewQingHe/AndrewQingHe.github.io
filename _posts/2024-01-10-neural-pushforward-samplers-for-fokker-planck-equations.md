@@ -13,15 +13,15 @@ The Fokker-Planck equation describes the time evolution of probability density f
 
 For a stochastic process described by the SDE:
 
-```
-dX_t = μ(X_t, t)dt + σ(X_t, t)dW_t
-```
+$$
+dX_t = \mu(X_t, t)dt + \sigma(X_t, t)dW_t
+$$
 
-The corresponding Fokker-Planck equation for the probability density p(x, t) is:
+The corresponding Fokker-Planck equation for the probability density $p(x, t)$ is:
 
-```
-∂p/∂t = -∇·[μ(x, t)p] + ½∇·∇:[σ(x, t)σ(x, t)^T p]
-```
+$$
+\frac{\partial p}{\partial t} = -\nabla \cdot [\mu(x, t)p] + \frac{1}{2} \nabla \cdot \nabla : [\sigma(x, t)\sigma(x, t)^T p]
+$$
 
 ## The Pushforward Approach
 
@@ -41,11 +41,11 @@ We use a weak adversarial formulation where a critic network φ learns to distin
 
 The training objective minimizes:
 
-```
-L(T, φ) = E[φ(T(Z))] - E[φ(X)] + λ·R(φ)
-```
+$$
+L(T, \varphi) = \mathbb{E}[\varphi(T(Z))] - \mathbb{E}[\varphi(X)] + \lambda \cdot R(\varphi)
+$$
 
-Where R(φ) is a regularization term enforcing that φ is in a suitable function space (e.g., Sobolev space).
+Where $R(\varphi)$ is a regularization term enforcing that $\varphi$ is in a suitable function space (e.g., Sobolev space).
 
 ## Advantages
 

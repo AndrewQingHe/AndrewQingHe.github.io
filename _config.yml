@@ -8,6 +8,13 @@ github_username: AndrewQingHe
 
 # Build settings
 markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  input: GFM
+  hard_wrap: false
+  math_engine_opts:
+    preview: false
 theme: minima
 plugins:
   - jekyll-feed

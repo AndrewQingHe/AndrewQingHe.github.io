@@ -6,13 +6,11 @@
 
 <p>For a stochastic process described by the SDE:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dX_t = μ(X_t, t)dt + σ(X_t, t)dW_t
-</code></pre></div></div>
+\[dX_t = \mu(X_t, t)dt + \sigma(X_t, t)dW_t\]
 
-<p>The corresponding Fokker-Planck equation for the probability density p(x, t) is:</p>
+<p>The corresponding Fokker-Planck equation for the probability density $p(x, t)$ is:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>∂p/∂t = -∇·[μ(x, t)p] + ½∇·∇:[σ(x, t)σ(x, t)^T p]
-</code></pre></div></div>
+\[\frac{\partial p}{\partial t} = -\nabla \cdot [\mu(x, t)p] + \frac{1}{2} \nabla \cdot \nabla : [\sigma(x, t)\sigma(x, t)^T p]\]
 
 <h2 id="the-pushforward-approach">The Pushforward Approach</h2>
 
@@ -32,10 +30,9 @@ Then X ∼ T#ρ (pushforward measure)</p>
 
 <p>The training objective minimizes:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>L(T, φ) = E[φ(T(Z))] - E[φ(X)] + λ·R(φ)
-</code></pre></div></div>
+\[L(T, \varphi) = \mathbb{E}[\varphi(T(Z))] - \mathbb{E}[\varphi(X)] + \lambda \cdot R(\varphi)\]
 
-<p>Where R(φ) is a regularization term enforcing that φ is in a suitable function space (e.g., Sobolev space).</p>
+<p>Where $R(\varphi)$ is a regularization term enforcing that $\varphi$ is in a suitable function space (e.g., Sobolev space).</p>
 
 <h2 id="advantages">Advantages</h2>
 

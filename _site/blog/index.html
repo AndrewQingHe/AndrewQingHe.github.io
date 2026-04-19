@@ -16,6 +16,27 @@
     />
     <link href="/styles.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- MathJax for LaTeX math rendering -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+          processEscapes: true,
+          processEnvironments: true,
+        },
+        options: {
+          skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Research Blog | Andrew Qing He - Personal Website</title>
 <meta name="generator" content="Jekyll v4.3.2" />
@@ -171,6 +192,42 @@
       <div class="blog-post-card mb-5 fade-in">
         <div class="blog-post-header">
           <h2 class="blog-post-title">
+            <a href="/2024/01/11/math-formula-trial.html">Math Formula Trial</a>
+          </h2>
+          <div class="blog-post-meta">
+            <i class="fas fa-calendar"></i> January 11, 2024 &nbsp;&nbsp;
+            <i class="fas fa-user"></i> Andrew Qing He
+          </div>
+        </div>
+        <div class="blog-post-excerpt">
+          方程 $a x^2 + b x + c = 0$ 的解是
+
+        </div>
+        <div class="blog-post-footer">
+          <div class="blog-post-tags">
+            
+            <span class="badge bg-primary">Deep</span>
+            
+            <span class="badge bg-primary">Learning,</span>
+            
+            <span class="badge bg-primary">PDEs,</span>
+            
+            <span class="badge bg-primary">Stochastic</span>
+            
+            <span class="badge bg-primary">Methods,</span>
+            
+            <span class="badge bg-primary">Research</span>
+            
+          </div>
+          <a href="/2024/01/11/math-formula-trial.html" class="read-more-btn">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="blog-post-card mb-5 fade-in">
+        <div class="blog-post-header">
+          <h2 class="blog-post-title">
             <a href="/2024/01/10/neural-pushforward-samplers-for-fokker-planck-equations.html">Neural Pushforward Samplers for Fokker-Planck Equations</a>
           </h2>
           <div class="blog-post-meta">
@@ -245,6 +302,13 @@
             
             <div class="recent-post-item">
               <div class="recent-post-title">
+                <a href="/2024/01/11/math-formula-trial.html">Math Formula Trial</a>
+              </div>
+              <div class="recent-post-date">Jan 11, 2024</div>
+            </div>
+            
+            <div class="recent-post-item">
+              <div class="recent-post-title">
                 <a href="/2024/01/10/neural-pushforward-samplers-for-fokker-planck-equations.html">Neural Pushforward Samplers for Fokker-Planck Equations</a>
               </div>
               <div class="recent-post-date">Jan 10, 2024</div>
@@ -261,19 +325,29 @@
           <div class="categories-list">
             
             
+            <a href="/blog/tag/" class="badge bg-secondary me-1 mb-1"></a>
+            
             <a href="/blog/tag/announcement" class="badge bg-secondary me-1 mb-1">Announcement</a>
             
             <a href="/blog/tag/blog" class="badge bg-secondary me-1 mb-1">Blog</a>
             
+            <a href="/blog/tag/deep" class="badge bg-secondary me-1 mb-1">Deep</a>
+            
             <a href="/blog/tag/deep-learning" class="badge bg-secondary me-1 mb-1">Deep Learning</a>
             
+            <a href="/blog/tag/learning" class="badge bg-secondary me-1 mb-1">Learning</a>
+            
             <a href="/blog/tag/mathematics" class="badge bg-secondary me-1 mb-1">Mathematics</a>
+            
+            <a href="/blog/tag/methods" class="badge bg-secondary me-1 mb-1">Methods</a>
             
             <a href="/blog/tag/pdes" class="badge bg-secondary me-1 mb-1">PDEs</a>
             
             <a href="/blog/tag/research" class="badge bg-secondary me-1 mb-1">Research</a>
             
             <a href="/blog/tag/scientific-computing" class="badge bg-secondary me-1 mb-1">Scientific Computing</a>
+            
+            <a href="/blog/tag/stochastic" class="badge bg-secondary me-1 mb-1">Stochastic</a>
             
             <a href="/blog/tag/stochastic-methods" class="badge bg-secondary me-1 mb-1">Stochastic Methods</a>
             
