@@ -62,14 +62,24 @@ class BlogManager {
       // In a real deployment, you might use a build process or server-side script
       // For now, we'll check for specific files and load them if they exist
 
-      const articleFiles = ["welcome-to-the-blog.md", "template.md"];
+      const articleFiles = [
+        "welcome-to-the-blog.md",
+        "introduction-to-deep-learning-for-pdes.md",
+        "stochastic-methods-in-scientific-computing.md",
+        "neural-pushforward-samplers-for-fokker-planck-equations.md",
+        "template.md",
+      ];
 
       const loadedArticles = [];
+      let hasLocalFiles = false;
 
       for (const filename of articleFiles) {
         try {
+          // Try to fetch the file
           const response = await fetch(`${this.articlesDirectory}${filename}`);
+
           if (response.ok) {
+            hasLocalFiles = true;
             const content = await response.text();
             const metadata = this.parseMetadata(content);
             const excerpt = this.extractExcerpt(content);
@@ -92,147 +102,43 @@ class BlogManager {
             });
           }
         } catch (fileError) {
+          // fetch may fail on local file system, that's okay
           console.log(`Could not load ${filename}:`, fileError);
         }
       }
 
-      // If we loaded any articles, use them
-      if (loadedArticles.length > 0) {
+      // If we loaded any articles from local files, use them
+      if (hasLocalFiles && loadedArticles.length > 0) {
         // Sort by date (newest first)
         loadedArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
         this.articles = loadedArticles;
+        console.log(`Loaded ${loadedArticles.length} articles from local files`);
       } else {
-        // Fall back to sample articles
-        this.articles = this.getSampleArticles();
+        // If no local files were loaded, use fallback articles
+        console.log("Using fallback article data");
+        this.articles = this.getFallbackArticles();
       }
     } catch (error) {
-      console.log("Error loading articles, using samples:", error);
-      this.articles = this.getSampleArticles();
+      console.log("Error loading articles:", error);
+      // Fall back to fallback articles
+      this.articles = this.getFallbackArticles();
     }
   }
 
-  // Get sample articles for demonstration
-  getSampleArticles() {
+  // Simple fallback if no articles are loaded
+  getFallbackArticles() {
     return [
       {
-        id: "introduction-to-deep-learning-for-pdes",
-        filename: "introduction-to-deep-learning-for-pdes.md",
-        title: "Introduction to Deep Learning for PDEs",
-        date: "2024-03-15",
+        id: "welcome-to-the-blog",
+        filename: "welcome-to-the-blog.md",
+        title: "Welcome to the Research Blog",
+        date: "2024-03-20",
         author: "Andrew Qing He",
-        tags: ["Deep Learning", "PDEs", "Scientific Computing"],
+        tags: ["Announcement", "Blog", "Research"],
         excerpt:
-          "An overview of how deep neural networks are revolutionizing the solution of partial differential equations, with examples from recent research.",
-        content: `---
-title: Introduction to Deep Learning for PDEs
-date: 2024-03-15
-author: Andrew Qing He
-tags: Deep Learning, PDEs, Scientific Computing
----
-
-# Introduction to Deep Learning for PDEs
-
-Partial Differential Equations (PDEs) are fundamental to modeling physical phenomena across science and engineering. Traditional numerical methods like finite difference, finite element, and spectral methods have been the workhorses for decades. However, deep learning offers new possibilities.
-
-## Why Deep Learning for PDEs?
-
-Deep neural networks can approximate complex functions with high accuracy. When applied to PDEs, they offer several advantages:
-
-1. **Mesh-free solutions**: Unlike traditional methods that require discretization grids
-2. **High-dimensional problems**: Neural networks can handle problems in higher dimensions
-3. **Inverse problems**: Can solve parameter estimation problems more efficiently
-
-## Key Approaches
-
-### Physics-Informed Neural Networks (PINNs)
-PINNs incorporate the PDE directly into the loss function, enforcing physical constraints during training.
-
-### DeepMartNet
-Our recent work on DeepMartNet uses martingale theory to solve elliptic PDEs and eigenvalue problems.
-
-## Challenges and Future Directions
-
-While promising, challenges remain in training stability, error estimation, and computational cost for large-scale problems.
-
-*This is a sample article demonstrating the blog system.*`,
-      },
-      {
-        id: "stochastic-methods-in-scientific-computing",
-        filename: "stochastic-methods-in-scientific-computing.md",
-        title: "Stochastic Methods in Scientific Computing",
-        date: "2024-02-28",
-        author: "Andrew Qing He",
-        tags: ["Stochastic Methods", "Scientific Computing", "Mathematics"],
-        excerpt:
-          "Exploring stochastic algorithms like Gillespie and Monte Carlo methods for solving complex computational problems.",
-        content: `---
-title: Stochastic Methods in Scientific Computing
-date: 2024-02-28
-author: Andrew Qing He
-tags: Stochastic Methods, Scientific Computing, Mathematics
----
-
-# Stochastic Methods in Scientific Computing
-
-Stochastic methods provide powerful tools for tackling problems that are difficult or impossible to solve deterministically.
-
-## Monte Carlo Methods
-
-The classic Monte Carlo approach uses random sampling to estimate integrals, solve optimization problems, and simulate complex systems.
-
-## Gillespie Algorithm
-
-For chemical reaction networks and biological systems, the Gillespie algorithm provides exact stochastic simulation of reaction dynamics.
-
-## Stochastic Differential Equations (SDEs)
-
-SDEs model systems with inherent randomness, from financial markets to particle diffusion.
-
-## Applications in Machine Learning
-
-Stochastic gradient descent, the workhorse of deep learning, is itself a stochastic optimization method.
-
-*This is a sample article demonstrating the blog system.*`,
-      },
-      {
-        id: "neural-pushforward-samplers-for-fokker-planck-equations",
-        filename: "neural-pushforward-samplers-for-fokker-planck-equations.md",
-        title: "Neural Pushforward Samplers for Fokker-Planck Equations",
-        date: "2024-01-10",
-        author: "Andrew Qing He",
-        tags: ["Deep Learning", "PDEs", "Stochastic Methods", "Research"],
-        excerpt:
-          "Our recent work on using neural networks to sample from solutions of Fokker-Planck equations through pushforward measures.",
-        content: `---
-title: Neural Pushforward Samplers for Fokker-Planck Equations
-date: 2024-01-10
-author: Andrew Qing He
-tags: Deep Learning, PDEs, Stochastic Methods, Research
----
-
-# Neural Pushforward Samplers for Fokker-Planck Equations
-
-The Fokker-Planck equation describes the time evolution of probability density functions in stochastic systems. Solving it numerically is challenging, especially in high dimensions.
-
-## The Pushforward Approach
-
-Instead of directly approximating the density function, we learn a neural network that maps from a simple reference distribution (like Gaussian) to the target distribution.
-
-## Weak Adversarial Training
-
-We use a weak adversarial formulation where a critic network learns to distinguish between samples from the pushforward distribution and the true distribution.
-
-## Advantages
-
-1. **Sample generation**: Directly generates samples from the solution
-2. **High dimensions**: Scales better than grid-based methods
-3. **Mesh-free**: No need for spatial discretization
-
-## Results
-
-Our method shows promising results on fractional Fokker-Planck equations and McKean-Vlasov equations.
-
-*This is a sample article demonstrating the blog system.*`,
+          "Welcome to my new research blog! This space will feature short articles on computational mathematics, machine learning for PDEs, stochastic methods, and scientific computing.",
+        content:
+          "---\ntitle: Welcome to the Research Blog\ndate: 2024-03-20\nauthor: Andrew Qing He\ntags: Announcement, Blog, Research\n---\n\n# Welcome to the Research Blog\n\nWelcome to my new research blog! This space will feature short articles on computational mathematics, machine learning for PDEs, stochastic methods, and scientific computing.",
       },
     ];
   }
