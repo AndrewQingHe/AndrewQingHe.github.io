@@ -2,7 +2,7 @@
 title: Stochastic Methods in Scientific Computing
 date: 2024-02-28
 author: Andrew Qing He
-tags: Stochastic Methods, Scientific Computing, Mathematics
+tags: [Stochastic Methods, Scientific Computing, Mathematics]
 ---
 
 # Stochastic Methods in Scientific Computing

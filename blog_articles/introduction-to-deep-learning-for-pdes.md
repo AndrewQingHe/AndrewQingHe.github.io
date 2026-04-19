@@ -2,7 +2,7 @@
 title: Introduction to Deep Learning for PDEs
 date: 2024-03-15
 author: Andrew Qing He
-tags: Deep Learning, PDEs, Scientific Computing
+tags: [Deep Learning, PDEs, Scientific Computing]
 ---
 
 # Introduction to Deep Learning for PDEs

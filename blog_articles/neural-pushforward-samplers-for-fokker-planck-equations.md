@@ -2,7 +2,7 @@
 title: Neural Pushforward Samplers for Fokker-Planck Equations
 date: 2024-01-10
 author: Andrew Qing He
-tags: Deep Learning, PDEs, Stochastic Methods, Research
+tags: [Deep Learning, PDEs, Stochastic Methods, Research]
 ---
 
 # Neural Pushforward Samplers for Fokker-Planck Equations

@@ -2,7 +2,7 @@
 title: Your Article Title Here
 date: 2024-03-20
 author: Your Name
-tags: Tag1, Tag2, Tag3
+tags: [Tag1, Tag2, Tag3]
 ---
 
 # Your Article Title

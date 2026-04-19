@@ -2,7 +2,7 @@
 title: Welcome to the Research Blog
 date: 2024-03-20
 author: Andrew Qing He
-tags: Announcement, Blog, Research
+tags: [Announcement, Blog, Research]
 ---
 
 # Welcome to the Research Blog
