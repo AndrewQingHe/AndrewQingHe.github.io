@@ -109,7 +109,7 @@ async function loadBlogPosts() {
 
     // Re-render MathJax after loading content
     if (window.MathJax) {
-      window.MathJax.typesetPromise().catch((err) => console.error('MathJax typesetting failed:', err));
+      window.MathJax.typesetPromise().catch((err) => console.error("MathJax typesetting failed:", err));
     }
   } catch (error) {
     console.error("Error loading blog posts:", error);
@@ -242,7 +242,7 @@ We're applying these methods to:
 
     // Re-render MathJax after loading new content
     if (window.MathJax) {
-      window.MathJax.typesetPromise().catch((err) => console.error('MathJax typesetting failed:', err));
+      window.MathJax.typesetPromise().catch((err) => console.error("MathJax typesetting failed:", err));
     }
   } else {
     alert(`Blog post "${filename}" not found.`);
