@@ -6,7 +6,6 @@ const translations = {
     navResearch: "Research",
     navPublications: "Publications",
     navExperience: "Experience",
-    navContact: "Contact",
     heroTitle: "Andrew Qing He",
     heroSubtitle: "何清 (He Qing)",
     heroDescription: "Ph.D. Candidate in Computational Mathematics\nSouthern Methodist University",
@@ -45,13 +44,6 @@ const translations = {
     award1Desc: "Recognition for teaching excellence",
     award2Title: "SMU Research and Innovation Week Award",
     award2Desc: "Winner in AI for Scientific Computing category",
-    contactTitle: "Contact",
-    contactSubtitle: "Get in touch for collaborations or research discussions",
-    nameLabel: "Name",
-    emailLabel: "Email",
-    subjectLabel: "Subject",
-    messageLabel: "Message",
-    submitBtn: "Send Message",
     footerText: "&copy; 2024 Andrew Qing He (何清). All rights reserved."
   },
   zh: {
@@ -60,7 +52,6 @@ const translations = {
     navResearch: "研究",
     navPublications: "发表",
     navExperience: "经历",
-    navContact: "联系",
     heroTitle: "何清",
     heroSubtitle: "Andrew Qing He",
     heroDescription: "计算数学博士候选人\n南卫理公会大学",
@@ -99,13 +90,6 @@ const translations = {
     award1Desc: "教学优秀奖",
     award2Title: "SMU研究与创新周奖",
     award2Desc: "人工智能科学计算类别获奖者",
-    contactTitle: "联系方式",
-    contactSubtitle: "联系我进行合作或研究讨论",
-    nameLabel: "姓名",
-    emailLabel: "邮箱",
-    subjectLabel: "主题",
-    messageLabel: "消息",
-    submitBtn: "发送消息",
     footerText: "&copy; 2024 何清 (Andrew Qing He). 版权所有。"
   }
 };
@@ -124,7 +108,6 @@ function updateLanguage(lang) {
   document.getElementById('navResearch').textContent = trans.navResearch;
   document.getElementById('navPublications').textContent = trans.navPublications;
   document.getElementById('navExperience').textContent = trans.navExperience;
-  document.getElementById('navContact').textContent = trans.navContact;
 
   // Update hero section
   document.getElementById('heroTitle').textContent = trans.heroTitle;
@@ -174,15 +157,6 @@ function updateLanguage(lang) {
   document.getElementById('award2Title').textContent = trans.award2Title;
   document.getElementById('award2Desc').textContent = trans.award2Desc;
 
-  // Update contact section
-  document.getElementById('contactTitle').textContent = trans.contactTitle;
-  document.getElementById('contactSubtitle').textContent = trans.contactSubtitle;
-  document.getElementById('nameLabel').textContent = trans.nameLabel;
-  document.getElementById('emailLabel').textContent = trans.emailLabel;
-  document.getElementById('subjectLabel').textContent = trans.subjectLabel;
-  document.getElementById('messageLabel').textContent = trans.messageLabel;
-  document.getElementById('submitBtn').innerHTML = `<i class="fas fa-paper-plane me-2"></i>${trans.submitBtn}`;
-
   // Update footer
   document.getElementById('footerText').innerHTML = trans.footerText;
 
@@ -213,13 +187,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       }
     });
-  });
-
-  // Contact form handling
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you for your message! This is a demo form - in a real implementation, this would send an email.');
-    this.reset();
   });
 
   // Animation on scroll
