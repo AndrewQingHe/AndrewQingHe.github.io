@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>何清 (He Qing) - Personal Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button class="btn btn-outline-primary btn-sm" id="langToggle">
+            <i class="fas fa-language"></i> 中文
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#home">
+                <span id="navName">He Qing</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home" id="navHome">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" id="navAbout">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience" id="navExperience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills" id="navSkills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" id="navContact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto">
+                    <img src="portrait.jpg" alt="何清" class="profile-image mb-4 fade-in">
+                    <h1 class="display-4 fw-bold mb-3 fade-in" id="heroTitle">何清 (He Qing)</h1>
+                    <p class="lead mb-4 fade-in" id="heroSubtitle">Professional Developer & Technology Enthusiast</p>
+                    <p class="mb-4 fade-in" id="heroDescription">
+                        Passionate about creating innovative solutions and delivering exceptional user experiences through clean, efficient code.
+                    </p>
+                    <a href="#contact" class="btn btn-custom btn-lg fade-in">
+                        <i class="fas fa-envelope me-2"></i>
+                        <span id="contactBtn">Get In Touch</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-4" id="aboutTitle">About Me</h2>
+                    <p class="lead mb-5" id="aboutIntro">
+                        A dedicated professional with a passion for technology and innovation.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card p-4 h-100">
+                        <h4 id="personalTitle">Personal Information</h4>
+                        <ul class="list-unstyled" id="personalInfo">
+                            <li><strong>Name:</strong> 何清 (He Qing)</li>
+                            <li><strong>Location:</strong> [Your Location]</li>
+                            <li><strong>Email:</strong> [your.email@example.com]</li>
+                            <li><strong>Phone:</strong> [Your Phone]</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card p-4 h-100">
+                        <h4 id="summaryTitle">Professional Summary</h4>
+                        <p id="summaryText">
+                            Experienced professional with a strong background in software development and technology.
+                            Committed to delivering high-quality solutions and continuous learning in the ever-evolving tech landscape.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold" id="experienceTitle">Experience & Education</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4 id="currentRole">[Current Position/Role]</h4>
+                            <h6 class="text-muted" id="currentCompany">[Company Name] | [Start Date] - Present</h6>
+                            <p id="currentDesc">
+                                Leading development initiatives and contributing to innovative projects in a dynamic team environment.
+                            </p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 id="previousRole">[Previous Position/Role]</h4>
+                            <h6 class="text-muted" id="previousCompany">[Previous Company] | [Previous Dates]</h6>
+                            <p id="previousDesc">
+                                Developed and maintained software solutions, collaborating with cross-functional teams to deliver quality products.
+                            </p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 id="educationTitle">Education</h4>
+                            <h6 class="text-muted" id="educationDegree">[Degree] in [Field of Study]</h6>
+                            <p id="educationDesc">[University Name] | [Graduation Year]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold" id="skillsTitle">Skills & Expertise</h2>
+                </div>
+            </div>
+            <div class="row stagger-animation">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card p-4 text-center h-100 fade-in" style="--i: 1">
+                        <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                        <h4 id="programmingTitle">Programming</h4>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="pythonSkill">Python</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span id="jsSkill">JavaScript</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="d-flex justify-content-between">
+                                <span id="javaSkill">Java</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card p-4 text-center h-100 fade-in" style="--i: 2">
+                        <i class="fas fa-server fa-3x text-success mb-3"></i>
+                        <h4 id="backendTitle">Backend Development</h4>
+                        <ul class="list-unstyled" id="backendSkills">
+                            <li>Node.js & Express</li>
+                            <li>Django & Flask</li>
+                            <li>RESTful APIs</li>
+                            <li>Database Design</li>
+                            <li>Cloud Services (AWS)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card p-4 text-center h-100 fade-in" style="--i: 3">
+                        <i class="fas fa-tools fa-3x text-warning mb-3"></i>
+                        <h4 id="toolsTitle">Tools & Technologies</h4>
+                        <ul class="list-unstyled" id="toolsSkills">
+                            <li>Git & Version Control</li>
+                            <li>Docker & Containerization</li>
+                            <li>CI/CD Pipelines</li>
+                            <li>Linux/Unix Systems</li>
+                            <li>Agile Methodologies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold" id="contactTitle">Get In Touch</h2>
+                    <p class="lead" id="contactSubtitle">Let's discuss opportunities and collaborations</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card p-5">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label" id="nameLabel">Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label" id="emailLabel">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label" id="subjectLabel">Subject</label>
+                                <input type="text" class="form-control" id="subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label" id="messageLabel">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-custom btn-lg" id="submitBtn">
+                                    <i class="fas fa-paper-plane me-2"></i>
+                                    Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p class="mb-0" id="footerText">&copy; 2024 何清 (He Qing). All rights reserved.</p>
+            <div class="mt-3">
+                <a href="#" class="text-light me-3" id="linkedinLink">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </a>
+                <a href="#" class="text-light me-3" id="githubLink">
+                    <i class="fab fa-github fa-lg"></i>
+                </a>
+                <a href="#" class="text-light" id="emailLink">
+                    <i class="fas fa-envelope fa-lg"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
