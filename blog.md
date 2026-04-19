@@ -30,9 +30,6 @@ permalink: /blog/
             <span class="badge bg-primary">{{ tag }}</span>
             {% endfor %}
           </div>
-          <a href="{{ post.url | relative_url }}" class="read-more-btn">
-            Read More <i class="fas fa-arrow-right"></i>
-          </a>
         </div>
       </div>
       {% endfor %}
