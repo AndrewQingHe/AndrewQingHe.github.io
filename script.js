@@ -52,6 +52,7 @@ const translations = {
     award2Title: "SMU Research and Innovation Week Award",
     award2Desc: "Winner in AI for Scientific Computing category",
     footerText: "&copy; 2024 Andrew Qing He (何清). All rights reserved.",
+    navBlog: "Blog",
   },
   zh: {
     navName: "何清",
@@ -98,6 +99,7 @@ const translations = {
     award2Title: "SMU研究与创新周奖",
     award2Desc: "人工智能科学计算类别获奖者",
     footerText: "&copy; 2024 何清 (Andrew Qing He). 版权所有。",
+    navBlog: "博客",
   },
 };
 
@@ -115,6 +117,11 @@ function updateLanguage(lang) {
   document.getElementById("navResearch").textContent = trans.navResearch;
   document.getElementById("navPublications").textContent = trans.navPublications;
   document.getElementById("navExperience").textContent = trans.navExperience;
+  // Update blog navigation if it exists
+  const navBlogElement = document.getElementById("navBlog");
+  if (navBlogElement && trans.navBlog) {
+    navBlogElement.textContent = trans.navBlog;
+  }
   // Update hero section
   document.getElementById("heroTitle").textContent = trans.heroTitle;
   document.getElementById("heroSubtitle").textContent = trans.heroSubtitle;

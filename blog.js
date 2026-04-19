@@ -1,270 +1,446 @@
-// Language translations for blog page
-const blogTranslations = {
-  en: {
-    navName: "Andrew Qing He",
-    navHome: "Home",
-    navResearch: "Research",
-    navPublications: "Publications",
-    navExperience: "Experience",
-    navBlog: "Blog",
-    blogTitle: "Blog",
-    blogSubtitle: "Thoughts on computational mathematics, research, and technology",
-    blogDescription:
-      "Welcome to my research blog where I share insights, methodologies, and developments in computational mathematics and scientific computing.",
-    footerText: "&copy; 2024 Andrew Qing He (何清). All rights reserved.",
-  },
-  zh: {
-    navName: "何清",
-    navHome: "首页",
-    navResearch: "研究",
-    navPublications: "发表",
-    navExperience: "经历",
-    navBlog: "博客",
-    blogTitle: "博客",
-    blogSubtitle: "关于计算数学、研究和技术的心得",
-    blogDescription: "欢迎来到我的研究博客，在这里我分享计算数学和科学计算方面的见解、方法论和发展。",
-    footerText: "&copy; 2024 何清 (Andrew Qing He). 版权所有。",
-  },
-};
-
-// Language toggle functionality
-let currentLang = "en";
-const langToggle = document.getElementById("langToggle");
-
-function updateLanguage(lang) {
-  currentLang = lang;
-  const trans = blogTranslations[lang];
-
-  // Update navigation
-  document.getElementById("navName").textContent = trans.navName;
-  document.getElementById("navHome").textContent = trans.navHome;
-  document.getElementById("navResearch").textContent = trans.navResearch;
-  document.getElementById("navPublications").textContent = trans.navPublications;
-  document.getElementById("navExperience").textContent = trans.navExperience;
-  document.getElementById("navBlog").textContent = trans.navBlog;
-
-  // Update blog header
-  document.getElementById("blogTitle").textContent = trans.blogTitle;
-  document.getElementById("blogSubtitle").textContent = trans.blogSubtitle;
-  document.getElementById("blogDescription").textContent = trans.blogDescription;
-
-  // Update footer
-  document.getElementById("footerText").innerHTML = trans.footerText;
-
-  // Update body class for font
-  document.body.classList.toggle("chinese", lang === "zh");
-
-  // Update toggle button
-  langToggle.innerHTML = `<i class="fas fa-language"></i> ${lang === "en" ? "中文" : "English"}`;
-
-  // Reload blog posts to update any language-specific content
-  loadBlogPosts();
-}
-
 // Blog functionality
-async function loadBlogPosts() {
-  const blogPostsContainer = document.getElementById("blogPosts");
-
-  try {
-    // For GitHub Pages, we'll simulate loading from blog_articles directory
-    const blogPosts = [
-      {
-        title: "Introduction to Neural Pushforward Samplers",
-        date: "2026-04-18",
-        excerpt:
-          "Exploring the latest developments in neural pushforward methods for solving Fokker-Planck equations...",
-        filename: "blog_articles/neural-pushforward-samplers.md",
-        content: null,
-      },
-      {
-        title: "Deep Learning Approaches to Partial Differential Equations",
-        date: "2026-03-15",
-        excerpt:
-          "A comprehensive overview of how deep neural networks are revolutionizing partial differential equation solving...",
-        filename: "blog_articles/deep-learning-pdes.md",
-        content: null,
-      },
-    ];
-
-    let postsHTML = "";
-
-    if (blogPosts.length === 0) {
-      postsHTML = '<div class="text-center"><p>No blog posts yet. Check back soon!</p></div>';
-    } else {
-      blogPosts.forEach((post) => {
-        postsHTML += `
-          <div class="blog-post-item mb-4 p-4 bg-white rounded shadow-sm fade-in">
-            <h4 class="blog-post-title">${post.title}</h4>
-            <p class="text-muted mb-2"><i class="fas fa-calendar-alt me-2"></i>${formatDate(post.date)}</p>
-            <p class="blog-post-excerpt">${post.excerpt}</p>
-            <a href="#" class="btn btn-outline-primary btn-sm" onclick="loadBlogPost('${post.filename}')">
-              <i class="fas fa-book-open me-2"></i>Read More
-            </a>
-          </div>
-        `;
-      });
-    }
-
-    blogPostsContainer.innerHTML = postsHTML;
-
-    // Re-render MathJax after loading content
-    if (window.MathJax) {
-      window.MathJax.typesetPromise().catch((err) => console.error("MathJax typesetting failed:", err));
-    }
-  } catch (error) {
-    console.error("Error loading blog posts:", error);
-    blogPostsContainer.innerHTML =
-      '<div class="text-center"><p>Error loading blog posts. Please try again later.</p></div>';
+class BlogManager {
+  constructor() {
+    this.articles = [];
+    this.articlesDirectory = "blog_articles/";
+    this.articlesPerPage = 10;
   }
-}
 
-function formatDate(dateString) {
-  const date = new Date(dateString);
-  return date.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
+  // Parse metadata from markdown content
+  parseMetadata(content) {
+    const metadata = {};
+    const lines = content.split("\n");
 
-function loadBlogPost(filename) {
-  // For GitHub Pages, we'll load the markdown content
-  const blogPostsContainer = document.getElementById("blogPosts");
+    for (let i = 0; i < Math.min(lines.length, 10); i++) {
+      const line = lines[i].trim();
+      if (line.startsWith("---")) {
+        continue;
+      }
+      if (line.includes(":")) {
+        const [key, ...valueParts] = line.split(":");
+        const value = valueParts.join(":").trim();
+        metadata[key.trim().toLowerCase()] = value;
+      }
+    }
 
-  // Sample content for demonstration
-  const sampleContent = {
-    "blog_articles/neural-pushforward-samplers.md": `# Introduction to Neural Pushforward Samplers
+    return metadata;
+  }
 
-**Published:** April 18, 2026
+  // Extract excerpt from markdown content
+  extractExcerpt(content, maxLength = 200) {
+    // Remove metadata section
+    let contentWithoutMetadata = content;
+    const metadataEnd = content.indexOf("---", 3);
+    if (metadataEnd !== -1) {
+      contentWithoutMetadata = content.substring(metadataEnd + 3).trim();
+    }
 
-## Overview
+    // Remove markdown formatting for excerpt
+    let excerpt = contentWithoutMetadata
+      .replace(/^#+\s+/gm, "") // Remove headers
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") // Remove links, keep text
+      .replace(/!\[([^\]]*)\]\([^)]+\)/g, "") // Remove images
+      .replace(/`([^`]+)`/g, "$1") // Remove inline code formatting
+      .replace(/\*\*([^*]+)\*\*/g, "$1") // Remove bold
+      .replace(/\*([^*]+)\*/g, "$1") // Remove italic
+      .replace(/\n+/g, " ") // Replace newlines with spaces
+      .trim();
 
-Neural pushforward samplers represent a cutting-edge approach to solving complex probability distribution problems, particularly in the context of Fokker-Planck equations. This technique combines the power of deep neural networks with traditional sampling methods to create more efficient and accurate distribution sampling.
+    // Truncate to max length
+    if (excerpt.length > maxLength) {
+      excerpt = excerpt.substring(0, maxLength) + "...";
+    }
 
-## Background
+    return excerpt;
+  }
 
-The Fokker-Planck equation describes the time evolution of probability density functions in phase space. Traditional numerical methods for solving these equations often struggle with high-dimensional problems or complex boundary conditions.
+  // Load all articles from the blog_articles directory
+  async loadArticles() {
+    try {
+      // Try to load actual markdown files
+      // For GitHub Pages static hosting, we need to know the file names
+      // In a real deployment, you might use a build process or server-side script
+      // For now, we'll check for specific files and load them if they exist
 
-## Neural Pushforward Methods
+      const articleFiles = ["welcome-to-the-blog.md", "template.md"];
 
-Our approach uses neural networks to learn a pushforward map that transforms a simple reference distribution (like a standard normal) into the target distribution of interest. This method offers several advantages:
+      const loadedArticles = [];
 
-- **Scalability**: Can handle high-dimensional problems effectively
-- **Flexibility**: Adapts to complex geometries and boundary conditions
-- **Efficiency**: Once trained, sampling is extremely fast
+      for (const filename of articleFiles) {
+        try {
+          const response = await fetch(`${this.articlesDirectory}${filename}`);
+          if (response.ok) {
+            const content = await response.text();
+            const metadata = this.parseMetadata(content);
+            const excerpt = this.extractExcerpt(content);
 
-## Applications
+            // Generate ID from filename
+            const id = filename
+              .replace(".md", "")
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, "-");
 
-This technique has applications in:
-- Financial mathematics (option pricing, risk management)
-- Molecular dynamics (protein folding simulations)
-- Climate modeling (atmospheric flow simulations)
-- Machine learning (generative modeling)
+            loadedArticles.push({
+              id,
+              filename,
+              title: metadata.title || filename.replace(".md", "").replace(/-/g, " "),
+              date: metadata.date || new Date().toISOString().split("T")[0],
+              author: metadata.author || "Andrew Qing He",
+              tags: metadata.tags ? metadata.tags.split(",").map((tag) => tag.trim()) : ["Uncategorized"],
+              excerpt,
+              content,
+            });
+          }
+        } catch (fileError) {
+          console.log(`Could not load ${filename}:`, fileError);
+        }
+      }
 
-## Future Directions
+      // If we loaded any articles, use them
+      if (loadedArticles.length > 0) {
+        // Sort by date (newest first)
+        loadedArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+        this.articles = loadedArticles;
+      } else {
+        // Fall back to sample articles
+        this.articles = this.getSampleArticles();
+      }
+    } catch (error) {
+      console.log("Error loading articles, using samples:", error);
+      this.articles = this.getSampleArticles();
+    }
+  }
 
-We're currently extending this work to:
-- Time-dependent Fokker-Planck equations
-- Multi-scale problems
-- Integration with existing PDE solvers
+  // Get sample articles for demonstration
+  getSampleArticles() {
+    return [
+      {
+        id: "introduction-to-deep-learning-for-pdes",
+        filename: "introduction-to-deep-learning-for-pdes.md",
+        title: "Introduction to Deep Learning for PDEs",
+        date: "2024-03-15",
+        author: "Andrew Qing He",
+        tags: ["Deep Learning", "PDEs", "Scientific Computing"],
+        excerpt:
+          "An overview of how deep neural networks are revolutionizing the solution of partial differential equations, with examples from recent research.",
+        content: `---
+title: Introduction to Deep Learning for PDEs
+date: 2024-03-15
+author: Andrew Qing He
+tags: Deep Learning, PDEs, Scientific Computing
+---
 
-*This post will be updated as our research progresses.*`,
-    "blog_articles/deep-learning-pdes.md": `# Deep Learning Approaches to Partial Differential Equations
+# Introduction to Deep Learning for PDEs
 
-**Published:** March 15, 2026
+Partial Differential Equations (PDEs) are fundamental to modeling physical phenomena across science and engineering. Traditional numerical methods like finite difference, finite element, and spectral methods have been the workhorses for decades. However, deep learning offers new possibilities.
 
-## The Challenge
+## Why Deep Learning for PDEs?
 
-Partial differential equations (PDEs) are fundamental to describing physical phenomena across disciplines - from fluid dynamics to quantum mechanics. However, traditional numerical methods for solving PDEs face significant challenges:
+Deep neural networks can approximate complex functions with high accuracy. When applied to PDEs, they offer several advantages:
 
-- Computational complexity grows rapidly with problem dimension
-- Mesh generation for complex geometries is difficult
-- Stability and convergence issues in nonlinear problems
+1. **Mesh-free solutions**: Unlike traditional methods that require discretization grids
+2. **High-dimensional problems**: Neural networks can handle problems in higher dimensions
+3. **Inverse problems**: Can solve parameter estimation problems more efficiently
 
-## Deep Learning Solutions
-
-Recent advances in deep learning have opened new avenues for PDE solution methods:
+## Key Approaches
 
 ### Physics-Informed Neural Networks (PINNs)
-
-PINNs incorporate physical laws directly into the neural network training process through:
-- Residual loss terms enforcing PDE constraints
-- Boundary/initial condition enforcement
-- Automatic differentiation for computing derivatives
-
-### Deep Operator Networks
-
-These networks learn mappings between function spaces, enabling:
-- Solution of parametric PDE families
-- Real-time prediction for varying parameters
-- Reduced computational cost for similar problems
-
-## Our Contributions
-
-Our research focuses on developing specialized architectures for PDE problems:
+PINNs incorporate the PDE directly into the loss function, enforcing physical constraints during training.
 
 ### DeepMartNet
+Our recent work on DeepMartNet uses martingale theory to solve elliptic PDEs and eigenvalue problems.
 
-A martingale-based neural network approach for solving boundary value problems of elliptic PDEs. Key features:
-- Guaranteed convergence properties
-- Efficient handling of complex boundary conditions
-- Scalable to high dimensions
+## Challenges and Future Directions
 
-### Applications in Computational Mathematics
+While promising, challenges remain in training stability, error estimation, and computational cost for large-scale problems.
 
-We're applying these methods to:
-- Eigenvalue problems
-- Time-dependent PDEs
-- Coupled multi-physics systems
+*This is a sample article demonstrating the blog system.*`,
+      },
+      {
+        id: "stochastic-methods-in-scientific-computing",
+        filename: "stochastic-methods-in-scientific-computing.md",
+        title: "Stochastic Methods in Scientific Computing",
+        date: "2024-02-28",
+        author: "Andrew Qing He",
+        tags: ["Stochastic Methods", "Scientific Computing", "Mathematics"],
+        excerpt:
+          "Exploring stochastic algorithms like Gillespie and Monte Carlo methods for solving complex computational problems.",
+        content: `---
+title: Stochastic Methods in Scientific Computing
+date: 2024-02-28
+author: Andrew Qing He
+tags: Stochastic Methods, Scientific Computing, Mathematics
+---
 
-## Current Research Directions
+# Stochastic Methods in Scientific Computing
 
-- Hybrid methods combining traditional and neural approaches
-- Uncertainty quantification in neural PDE solvers
-- Extension to stochastic PDEs
+Stochastic methods provide powerful tools for tackling problems that are difficult or impossible to solve deterministically.
 
-*Stay tuned for updates on our latest results!*`,
-  };
+## Monte Carlo Methods
 
-  const content = sampleContent[filename];
-  if (content) {
-    const htmlContent = marked.parse(content);
-    blogPostsContainer.innerHTML = `
-      <div class="blog-post-full mb-4 p-4 bg-white rounded shadow-sm">
-        <div class="blog-post-content">${htmlContent}</div>
-        <div class="mt-4">
-          <a href="#" class="btn btn-outline-secondary btn-sm" onclick="loadBlogPosts()">
-            <i class="fas fa-arrow-left me-2"></i>Back to Blog
-          </a>
+The classic Monte Carlo approach uses random sampling to estimate integrals, solve optimization problems, and simulate complex systems.
+
+## Gillespie Algorithm
+
+For chemical reaction networks and biological systems, the Gillespie algorithm provides exact stochastic simulation of reaction dynamics.
+
+## Stochastic Differential Equations (SDEs)
+
+SDEs model systems with inherent randomness, from financial markets to particle diffusion.
+
+## Applications in Machine Learning
+
+Stochastic gradient descent, the workhorse of deep learning, is itself a stochastic optimization method.
+
+*This is a sample article demonstrating the blog system.*`,
+      },
+      {
+        id: "neural-pushforward-samplers-for-fokker-planck-equations",
+        filename: "neural-pushforward-samplers-for-fokker-planck-equations.md",
+        title: "Neural Pushforward Samplers for Fokker-Planck Equations",
+        date: "2024-01-10",
+        author: "Andrew Qing He",
+        tags: ["Deep Learning", "PDEs", "Stochastic Methods", "Research"],
+        excerpt:
+          "Our recent work on using neural networks to sample from solutions of Fokker-Planck equations through pushforward measures.",
+        content: `---
+title: Neural Pushforward Samplers for Fokker-Planck Equations
+date: 2024-01-10
+author: Andrew Qing He
+tags: Deep Learning, PDEs, Stochastic Methods, Research
+---
+
+# Neural Pushforward Samplers for Fokker-Planck Equations
+
+The Fokker-Planck equation describes the time evolution of probability density functions in stochastic systems. Solving it numerically is challenging, especially in high dimensions.
+
+## The Pushforward Approach
+
+Instead of directly approximating the density function, we learn a neural network that maps from a simple reference distribution (like Gaussian) to the target distribution.
+
+## Weak Adversarial Training
+
+We use a weak adversarial formulation where a critic network learns to distinguish between samples from the pushforward distribution and the true distribution.
+
+## Advantages
+
+1. **Sample generation**: Directly generates samples from the solution
+2. **High dimensions**: Scales better than grid-based methods
+3. **Mesh-free**: No need for spatial discretization
+
+## Results
+
+Our method shows promising results on fractional Fokker-Planck equations and McKean-Vlasov equations.
+
+*This is a sample article demonstrating the blog system.*`,
+      },
+    ];
+  }
+
+  // Render blog posts to the page
+  renderBlogPosts() {
+    const container = document.getElementById("blog-posts-container");
+    if (!container) return;
+
+    if (this.articles.length === 0) {
+      container.innerHTML = `
+        <div class="text-center py-5">
+          <i class="fas fa-newspaper fa-3x text-muted mb-3"></i>
+          <h4>No blog posts yet</h4>
+          <p class="text-muted">Check back soon for new articles!</p>
         </div>
-      </div>
-    `;
-
-    // Re-render MathJax after loading new content
-    if (window.MathJax) {
-      window.MathJax.typesetPromise().catch((err) => console.error("MathJax typesetting failed:", err));
+      `;
+      return;
     }
-  } else {
-    alert(`Blog post "${filename}" not found.`);
+
+    let html = "";
+    this.articles.forEach((article) => {
+      const dateObj = new Date(article.date);
+      const formattedDate = dateObj.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+
+      const tagsHtml = article.tags.map((tag) => `<span class="badge bg-primary">${tag}</span>`).join(" ");
+
+      html += `
+        <div class="blog-post-card fade-in">
+          <div class="blog-post-header">
+            <h3 class="blog-post-title">${article.title}</h3>
+            <div class="blog-post-meta">
+              <i class="fas fa-calendar"></i> ${formattedDate} &nbsp;&nbsp;
+              <i class="fas fa-user"></i> ${article.author}
+            </div>
+          </div>
+          <div class="blog-post-excerpt">
+            <p>${article.excerpt}</p>
+          </div>
+          <div class="blog-post-footer">
+            <div class="blog-post-tags">
+              ${tagsHtml}
+            </div>
+            <a href="article.html?id=${article.id}" class="read-more-btn">
+              Read More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = html;
+  }
+
+  // Render recent posts in sidebar
+  renderRecentPosts() {
+    const container = document.getElementById("recent-posts-list");
+    if (!container || this.articles.length === 0) return;
+
+    const recentArticles = this.articles.slice(0, 5);
+    let html = "";
+
+    recentArticles.forEach((article) => {
+      const dateObj = new Date(article.date);
+      const formattedDate = dateObj.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      });
+
+      html += `
+        <div class="recent-post-item">
+          <div class="recent-post-title">
+            <a href="article.html?id=${article.id}">${article.title}</a>
+          </div>
+          <div class="recent-post-date">${formattedDate}</div>
+        </div>
+      `;
+    });
+
+    container.innerHTML = html;
+  }
+
+  // Initialize the blog
+  async init() {
+    await this.loadArticles();
+    this.renderBlogPosts();
+    this.renderRecentPosts();
+
+    // Add animation to blog posts
+    this.animateBlogPosts();
+  }
+
+  // Add animation to blog posts
+  animateBlogPosts() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in");
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll(".blog-post-card").forEach((el) => {
+      observer.observe(el);
+    });
   }
 }
 
-// Event listeners
-document.addEventListener("DOMContentLoaded", function () {
-  // Language toggle
-  langToggle.addEventListener("click", () => {
-    const newLang = currentLang === "en" ? "zh" : "en";
-    updateLanguage(newLang);
-  });
+// Initialize blog when DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+  const blogManager = new BlogManager();
+  blogManager.init();
 
-  // Smooth scrolling for navigation (when linking to index.html sections)
-  document.querySelectorAll('a[href^="index.html#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      // Let the browser handle navigation to index.html
-      return true;
-    });
-  });
-
-  // Initialize with English
-  updateLanguage("en");
+  // Update language for blog-specific elements
+  updateBlogLanguage();
 });
+
+// Blog-specific language translations
+function updateBlogLanguage() {
+  const lang = currentLang;
+  const translations = {
+    en: {
+      blogTitle: "Research Blog",
+      blogSubtitle: "Short articles on computational mathematics, machine learning, and scientific computing",
+      loadingText: "Loading blog posts...",
+      aboutTitle: "About This Blog",
+      aboutText:
+        "This blog features short articles on computational mathematics, machine learning for PDEs, stochastic methods, and scientific computing. Posts are written in Markdown for easy reading.",
+      writeGuideBtn: "How to Write Posts",
+      categoriesTitle: "Categories",
+      recentPostsTitle: "Recent Posts",
+      writeGuideTitle: "How to Write Posts",
+      writeGuideText: "To create a new blog post:",
+      writeStep1: "Create a Markdown (.md) file in the <code>blog_articles</code> directory",
+      writeStep2: "Add metadata at the top (title, date, author, tags)",
+      writeStep3: "Write your content using Markdown syntax",
+      writeStep4: "Save the file - it will automatically appear in the blog",
+      templateBtn: "View Template",
+      navBlog: "Blog",
+    },
+    zh: {
+      blogTitle: "研究博客",
+      blogSubtitle: "关于计算数学、机器学习和科学计算的短文",
+      loadingText: "正在加载博客文章...",
+      aboutTitle: "关于本博客",
+      aboutText:
+        "本博客收录关于计算数学、偏微分方程的机器学习、随机方法和科学计算的短文。文章使用Markdown格式编写，便于阅读。",
+      writeGuideBtn: "如何撰写文章",
+      categoriesTitle: "分类",
+      recentPostsTitle: "最近文章",
+      writeGuideTitle: "如何撰写文章",
+      writeGuideText: "创建新博客文章的步骤：",
+      writeStep1: "在<code>blog_articles</code>目录中创建Markdown (.md)文件",
+      writeStep2: "在顶部添加元数据（标题、日期、作者、标签）",
+      writeStep3: "使用Markdown语法编写内容",
+      writeStep4: "保存文件 - 它将自动出现在博客中",
+      templateBtn: "查看模板",
+      navBlog: "博客",
+    },
+  };
+
+  const trans = translations[lang];
+  if (!trans) return;
+
+  // Update blog-specific elements
+  const elements = {
+    blogTitle: document.getElementById("blogTitle"),
+    blogSubtitle: document.getElementById("blogSubtitle"),
+    loadingText: document.getElementById("loadingText"),
+    aboutTitle: document.getElementById("aboutTitle"),
+    aboutText: document.getElementById("aboutText"),
+    writeGuideBtn: document.getElementById("writeGuideBtn"),
+    categoriesTitle: document.getElementById("categoriesTitle"),
+    recentPostsTitle: document.getElementById("recentPostsTitle"),
+    writeGuideTitle: document.getElementById("writeGuideTitle"),
+    writeGuideText: document.getElementById("writeGuideText"),
+    writeStep1: document.getElementById("writeStep1"),
+    writeStep2: document.getElementById("writeStep2"),
+    writeStep3: document.getElementById("writeStep3"),
+    writeStep4: document.getElementById("writeStep4"),
+    templateBtn: document.getElementById("templateBtn"),
+    navBlog: document.getElementById("navBlog"),
+  };
+
+  for (const [id, element] of Object.entries(elements)) {
+    if (element && trans[id]) {
+      if (id === "writeStep1" || id === "writeStep2" || id === "writeStep3" || id === "writeStep4") {
+        element.innerHTML = trans[id];
+      } else {
+        element.textContent = trans[id];
+      }
+    }
+  }
+}
+
+// Override the updateLanguage function to include blog translations
+const originalUpdateLanguage = window.updateLanguage;
+window.updateLanguage = function (lang) {
+  originalUpdateLanguage(lang);
+  updateBlogLanguage();
+};
