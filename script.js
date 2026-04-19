@@ -17,34 +17,41 @@ const translations = {
     researchTitle: "Research Interests",
     researchSubtitle: "Developing computational methods for complex scientific problems",
     mlTitle: "Machine Learning for PDEs",
-    mlDesc: "Developing deep neural network methods for solving partial differential equations, including DeepMartNet for boundary value problems and eigenvalue computations.",
+    mlDesc:
+      "Developing deep neural network methods for solving partial differential equations, including DeepMartNet for boundary value problems and eigenvalue computations.",
     stochasticTitle: "Stochastic Computing",
-    stochasticDesc: "Employing stochastic tools including Gillespie algorithms and stochastic differential equations to model system dynamics and solve challenging computational problems.",
+    stochasticDesc:
+      "Employing stochastic tools including Gillespie algorithms and stochastic differential equations to model system dynamics and solve challenging computational problems.",
     geometryTitle: "Differential Geometry",
-    geometryDesc: "Investigating geometric frameworks including connections and Riemannian metrics to provide insights into diverse models from mechanics to machine learning optimization.",
+    geometryDesc:
+      "Investigating geometric frameworks including connections and Riemannian metrics to provide insights into diverse models from mechanics to machine learning optimization.",
     biologyTitle: "Systems Biology",
-    biologyDesc: "Studying emergent dynamics in biological networks, including gene regulation and neuronal systems, with experience from the iGEM competition.",
+    biologyDesc:
+      "Studying emergent dynamics in biological networks, including gene regulation and neuronal systems, with experience from the iGEM competition.",
     publicationsTitle: "Publications",
     publicationsSubtitle: "Selected research papers and preprints",
     experienceTitle: "Experience & Education",
     phdTitle: "Ph.D. Candidate in Mathematics",
     phdInstitution: "Southern Methodist University, Dedman College of Humanities and Sciences",
     phdPeriod: "2020 - Present",
-    phdDesc: "Conducting research in computational mathematics, focusing on deep learning methods for solving partial differential equations and developing stochastic computational algorithms.",
+    phdDesc:
+      "Conducting research in computational mathematics, focusing on deep learning methods for solving partial differential equations and developing stochastic computational algorithms.",
     researchTitle: "Research Assistant",
     researchInstitution: "Beijing International Center of Mathematical Research (BICMR)",
     researchPeriod: "China",
-    researchDesc: "Contributed to research on numerical schemes for Fokker-Planck equations and structured neural networks.",
+    researchDesc:
+      "Contributed to research on numerical schemes for Fokker-Planck equations and structured neural networks.",
     igemTitle: "iGEM Competition Participant",
     igemInstitution: "International Genetically Engineered Machine Competition",
     igemPeriod: "2019 - Team Peking",
-    igemDesc: "Participated in synthetic biology competition, gaining hands-on experience in systems biology and interdisciplinary research.",
+    igemDesc:
+      "Participated in synthetic biology competition, gaining hands-on experience in systems biology and interdisciplinary research.",
     awardsTitle: "Awards & Recognition",
     award1Title: "Betty McKnight Speairs Graduate Student Award in Mathematics",
     award1Desc: "Recognition for teaching excellence",
     award2Title: "SMU Research and Innovation Week Award",
     award2Desc: "Winner in AI for Scientific Computing category",
-    footerText: "&copy; 2024 Andrew Qing He (何清). All rights reserved."
+    footerText: "&copy; 2024 Andrew Qing He (何清). All rights reserved.",
   },
   zh: {
     navName: "何清",
@@ -90,100 +97,100 @@ const translations = {
     award1Desc: "教学优秀奖",
     award2Title: "SMU研究与创新周奖",
     award2Desc: "人工智能科学计算类别获奖者",
-    footerText: "&copy; 2024 何清 (Andrew Qing He). 版权所有。"
-  }
+    footerText: "&copy; 2024 何清 (Andrew Qing He). 版权所有。",
+  },
 };
 
 // Language toggle functionality
-let currentLang = 'en';
-const langToggle = document.getElementById('langToggle');
+let currentLang = "en";
+const langToggle = document.getElementById("langToggle");
 
 function updateLanguage(lang) {
   currentLang = lang;
   const trans = translations[lang];
 
   // Update navigation
-  document.getElementById('navName').textContent = trans.navName;
-  document.getElementById('navHome').textContent = trans.navHome;
-  document.getElementById('navResearch').textContent = trans.navResearch;
-  document.getElementById('navPublications').textContent = trans.navPublications;
-  document.getElementById('navExperience').textContent = trans.navExperience;
+  document.getElementById("navName").textContent = trans.navName;
+  document.getElementById("navHome").textContent = trans.navHome;
+  document.getElementById("navResearch").textContent = trans.navResearch;
+  document.getElementById("navPublications").textContent = trans.navPublications;
+  document.getElementById("navExperience").textContent = trans.navExperience;
 
   // Update hero section
-  document.getElementById('heroTitle').textContent = trans.heroTitle;
-  document.getElementById('heroSubtitle').textContent = trans.heroSubtitle;
-  document.getElementById('heroDescription').innerHTML = trans.heroDescription.replace('\n', '<br>');
-  document.getElementById('researchBadge1').textContent = trans.researchBadge1;
-  document.getElementById('researchBadge2').textContent = trans.researchBadge2;
-  document.getElementById('researchBadge3').textContent = trans.researchBadge3;
-  document.getElementById('researchBadge4').textContent = trans.researchBadge4;
-  document.getElementById('researchBtn').textContent = trans.researchBtn;
+  document.getElementById("heroTitle").textContent = trans.heroTitle;
+  document.getElementById("heroSubtitle").textContent = trans.heroSubtitle;
+  document.getElementById("heroDescription").innerHTML = trans.heroDescription.replace("\n", "<br>");
+  document.getElementById("researchBadge1").textContent = trans.researchBadge1;
+  document.getElementById("researchBadge2").textContent = trans.researchBadge2;
+  document.getElementById("researchBadge3").textContent = trans.researchBadge3;
+  document.getElementById("researchBadge4").textContent = trans.researchBadge4;
+  document.getElementById("researchBtn").textContent = trans.researchBtn;
 
   // Update research section
-  document.getElementById('researchTitle').textContent = trans.researchTitle;
-  document.getElementById('researchSubtitle').textContent = trans.researchSubtitle;
-  document.getElementById('mlTitle').textContent = trans.mlTitle;
-  document.getElementById('mlDesc').textContent = trans.mlDesc;
-  document.getElementById('stochasticTitle').textContent = trans.stochasticTitle;
-  document.getElementById('stochasticDesc').textContent = trans.stochasticDesc;
-  document.getElementById('geometryTitle').textContent = trans.geometryTitle;
-  document.getElementById('geometryDesc').textContent = trans.geometryDesc;
-  document.getElementById('biologyTitle').textContent = trans.biologyTitle;
-  document.getElementById('biologyDesc').textContent = trans.biologyDesc;
+  document.getElementById("researchTitle").textContent = trans.researchTitle;
+  document.getElementById("researchSubtitle").textContent = trans.researchSubtitle;
+  document.getElementById("mlTitle").textContent = trans.mlTitle;
+  document.getElementById("mlDesc").textContent = trans.mlDesc;
+  document.getElementById("stochasticTitle").textContent = trans.stochasticTitle;
+  document.getElementById("stochasticDesc").textContent = trans.stochasticDesc;
+  document.getElementById("geometryTitle").textContent = trans.geometryTitle;
+  document.getElementById("geometryDesc").textContent = trans.geometryDesc;
+  document.getElementById("biologyTitle").textContent = trans.biologyTitle;
+  document.getElementById("biologyDesc").textContent = trans.biologyDesc;
 
   // Update publications section
-  document.getElementById('publicationsTitle').textContent = trans.publicationsTitle;
-  document.getElementById('publicationsSubtitle').textContent = trans.publicationsSubtitle;
+  document.getElementById("publicationsTitle").textContent = trans.publicationsTitle;
+  document.getElementById("publicationsSubtitle").textContent = trans.publicationsSubtitle;
 
   // Update experience section
-  document.getElementById('experienceTitle').textContent = trans.experienceTitle;
-  document.getElementById('phdTitle').textContent = trans.phdTitle;
-  document.getElementById('phdInstitution').textContent = trans.phdInstitution;
-  document.getElementById('phdPeriod').textContent = trans.phdPeriod;
-  document.getElementById('phdDesc').textContent = trans.phdDesc;
-  document.getElementById('researchTitle').textContent = trans.researchTitle;
-  document.getElementById('researchInstitution').textContent = trans.researchInstitution;
-  document.getElementById('researchPeriod').textContent = trans.researchPeriod;
-  document.getElementById('researchDesc').textContent = trans.researchDesc;
-  document.getElementById('igemTitle').textContent = trans.igemTitle;
-  document.getElementById('igemInstitution').textContent = trans.igemInstitution;
-  document.getElementById('igemPeriod').textContent = trans.igemPeriod;
-  document.getElementById('igemDesc').textContent = trans.igemDesc;
+  document.getElementById("experienceTitle").textContent = trans.experienceTitle;
+  document.getElementById("phdTitle").textContent = trans.phdTitle;
+  document.getElementById("phdInstitution").textContent = trans.phdInstitution;
+  document.getElementById("phdPeriod").textContent = trans.phdPeriod;
+  document.getElementById("phdDesc").textContent = trans.phdDesc;
+  document.getElementById("researchTitle").textContent = trans.researchTitle;
+  document.getElementById("researchInstitution").textContent = trans.researchInstitution;
+  document.getElementById("researchPeriod").textContent = trans.researchPeriod;
+  document.getElementById("researchDesc").textContent = trans.researchDesc;
+  document.getElementById("igemTitle").textContent = trans.igemTitle;
+  document.getElementById("igemInstitution").textContent = trans.igemInstitution;
+  document.getElementById("igemPeriod").textContent = trans.igemPeriod;
+  document.getElementById("igemDesc").textContent = trans.igemDesc;
 
   // Update awards section
-  document.getElementById('awardsTitle').textContent = trans.awardsTitle;
-  document.getElementById('award1Title').textContent = trans.award1Title;
-  document.getElementById('award1Desc').textContent = trans.award1Desc;
-  document.getElementById('award2Title').textContent = trans.award2Title;
-  document.getElementById('award2Desc').textContent = trans.award2Desc;
+  document.getElementById("awardsTitle").textContent = trans.awardsTitle;
+  document.getElementById("award1Title").textContent = trans.award1Title;
+  document.getElementById("award1Desc").textContent = trans.award1Desc;
+  document.getElementById("award2Title").textContent = trans.award2Title;
+  document.getElementById("award2Desc").textContent = trans.award2Desc;
 
   // Update footer
-  document.getElementById('footerText').innerHTML = trans.footerText;
+  document.getElementById("footerText").innerHTML = trans.footerText;
 
   // Update body class for font
-  document.body.classList.toggle('chinese', lang === 'zh');
+  document.body.classList.toggle("chinese", lang === "zh");
 
   // Update toggle button
-  langToggle.innerHTML = `<i class="fas fa-language"></i> ${lang === 'en' ? '中文' : 'English'}`;
+  langToggle.innerHTML = `<i class="fas fa-language"></i> ${lang === "en" ? "中文" : "English"}`;
 }
 
 // Event listeners
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Language toggle
-  langToggle.addEventListener('click', () => {
-    const newLang = currentLang === 'en' ? 'zh' : 'en';
+  langToggle.addEventListener("click", () => {
+    const newLang = currentLang === "en" ? "zh" : "en";
     updateLanguage(newLang);
   });
 
   // Smooth scrolling for navigation
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const target = document.querySelector(this.getAttribute("href"));
       if (target) {
         target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+          behavior: "smooth",
+          block: "start",
         });
       }
     });
@@ -192,21 +199,21 @@ document.addEventListener('DOMContentLoaded', function() {
   // Animation on scroll
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: "0px 0px -50px 0px",
   };
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('fade-in');
+        entry.target.classList.add("fade-in");
       }
     });
   }, observerOptions);
 
-  document.querySelectorAll('.card, .timeline-item, .publication-item').forEach(el => {
+  document.querySelectorAll(".card, .timeline-item, .publication-item").forEach((el) => {
     observer.observe(el);
   });
 
   // Initialize with English
-  updateLanguage('en');
+  updateLanguage("en");
 });
