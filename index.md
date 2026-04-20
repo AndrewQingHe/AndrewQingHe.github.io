@@ -10,7 +10,7 @@ title: Andrew Qing He - Computational Mathematics Researcher
       <div class="col-lg-8 mx-auto">
         <img src="{{ '/portrait.jpg' | relative_url }}" alt="Andrew Qing He" class="profile-image mb-4 fade-in" />
         <h1 class="display-4 fw-bold mb-3 fade-in" id="heroTitle">Andrew Qing He</h1>
-        <h2 class="h3 text-muted mb-3 fade-in" id="heroSubtitle">何清 (He Qing)</h2>
+        <h2 class="h3 text-white mb-3 fade-in" id="heroSubtitle">何清 (He Qing)</h2>
         <p class="lead mb-4 fade-in" id="heroDescription">
           Ph.D. Candidate in Computational Mathematics<br />
           Southern Methodist University
@@ -209,7 +209,7 @@ title: Andrew Qing He - Computational Mathematics Researcher
             </p>
           </div>
           <div class="timeline-item">
-            <h4 id="researchTitle">Research Assistant</h4>
+            <h4 id="researchTitle">Research Interest</h4>
             <h6 class="text-muted" id="researchInstitution">
               Beijing International Center of Mathematical Research (BICMR)
             </h6>
