@@ -35,7 +35,7 @@ title: Andrew Qing He - Computational Mathematics Researcher
   <div class="container">
     <div class="row">
       <div class="col-12 text-center mb-5">
-        <h2 class="display-5 fw-bold" id="researchTitle">Research Interests</h2>
+        <h2 class="display-5 fw-bold" id="researchInterestTitle">Research Interests</h2>
         <p class="lead" id="researchSubtitle">Developing computational methods for complex scientific problems</p>
       </div>
     </div>
@@ -209,7 +209,7 @@ title: Andrew Qing He - Computational Mathematics Researcher
             </p>
           </div>
           <div class="timeline-item">
-            <h4 id="researchTitle">Research Interest</h4>
+            <h4 id="researchTitle">Research Assistant</h4>
             <h6 class="text-muted" id="researchInstitution">
               Beijing International Center of Mathematical Research (BICMR)
             </h6>
