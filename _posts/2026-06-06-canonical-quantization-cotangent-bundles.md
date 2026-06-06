@@ -1,6 +1,6 @@
 ---
 title: Canonical Quantization on Cotangent Bundles
-date: 2025-06-06
+date: 2026-06-06
 author: Andrew Qing He
 tags: [Quantum Mechanics, Differential Geometry, Mathematical Physics, Quantization]
 ---
