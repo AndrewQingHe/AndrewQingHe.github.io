@@ -7,11 +7,20 @@ url: "https://AndrewQingHe.github.io" # the base hostname & protocol for your si
 github_username: AndrewQingHe
 
 # Build settings
+# markdown: kramdown
+# kramdown:
+#   math_engine: mathjax
+#   syntax_highlighter: rouge
+#   input: GFM
+#   hard_wrap: false
+#   math_engine_opts:
+#     preview: false
 markdown: kramdown
 kramdown:
+  input: kramdown # Changed from GFM to kramdown
+  gfm_quirks: [paragraph_end, space_after_headers] # Retains comfortable GFM formatting behavior
   math_engine: mathjax
   syntax_highlighter: rouge
-  input: GFM
   hard_wrap: false
   math_engine_opts:
     preview: false
