@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://andrewqinghe.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://andrewqinghe.github.io/" rel="alternate" type="text/html" /><updated>2026-06-06T14:55:35+00:00</updated><id>https://andrewqinghe.github.io/feed.xml</id><title type="html">Andrew Qing He - Personal Website</title><subtitle>Personal website and research blog of Andrew Qing He</subtitle><entry><title type="html">Canonical Quantization on Cotangent Bundles</title><link href="https://andrewqinghe.github.io/2025/06/06/canonical-quantization-cotangent-bundles.html" rel="alternate" type="text/html" title="Canonical Quantization on Cotangent Bundles" /><published>2025-06-06T00:00:00+00:00</published><updated>2025-06-06T00:00:00+00:00</updated><id>https://andrewqinghe.github.io/2025/06/06/canonical-quantization-cotangent-bundles</id><content type="html" xml:base="https://andrewqinghe.github.io/2025/06/06/canonical-quantization-cotangent-bundles.html"><![CDATA[<h1 id="canonical-quantization-on-cotangent-bundles">Canonical Quantization on Cotangent Bundles</h1>
+
+<p>In typical physics textbooks, <strong>canonical quantization</strong> transfers a Hamiltonian MATH_PRESERVE_PLACEHOLDER_0@@ defined on MATH_PRESERVE_PLACEHOLDER_1@@ by replacing MATH_PRESERVE_PLACEHOLDER_2@@ with MATH_PRESERVE_PLACEHOLDER_3@@ and MATH_PRESERVE_PLACEHOLDER_4@@ with the multiplication operator MATH_PRESERVE_PLACEHOLDER_5@@, yielding a densely-defined operator on MATH_PRESERVE_PLACEHOLDER_6@@. This works perfectly for Euclidean space in Cartesian coordinates. However, the simple replacement framework does not work in general coordinates.</p>
+
+<p>A simple example: the kinetic energy of a particle of mass MATH_PRESERVE_PLACEHOLDER_7@@ in spherical coordinates MATH_PRESERVE_PLACEHOLDER_8@@ is</p>
+
+<p>MATH_PRESERVE_PLACEHOLDER_9@@</p>
+
+<p>The naive replacement MATH_PRESERVE_PLACEHOLDER_10@@ gives</p>
+
+<p>MATH_PRESERVE_PLACEHOLDER_11@@</p>
+
+<p>while the correct kinetic energy operator (the one used for, e.g., the hydrogen atom) is the Laplace-Beltrami operator</p>
+
+<p>MATH_PRESERVE_PLACEHOLDER_12@@</p>
+
+<p>Their difference is the first-order operator</p>
+
+<p>MATH_PRESERVE_PLACEHOLDER_13@@</p>
+
+<p>So MATH_PRESERVE_PLACEHOLDER_14@@ and the simple replacement fails. This note develops the correct, coordinate-free definition of canonical quantization for Hamiltonians that are fiberwise polynomial of degree at most 2 on a cotangent bundle.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p>Let MATH_PRESERVE_PLACEHOLDER_15@@ be a smooth manifold with a volume form MATH_PRESERVE_PLACEHOLDER_16@@, let MATH_PRESERVE_PLACEHOLDER_17@@ be the Hilbert space of complex square-integrable functions on MATH_PRESERVE_PLACEHOLDER_18@@, and let MATH_PRESERVE_PLACEHOLDER_19@@ be its cotangent bundle. A <strong>quantization</strong> is a linear map from a subspace of real functions on MATH_PRESERVE_PLACEHOLDER_20@@ to a subspace of densely-defined self-adjoint operators on MATH_PRESERVE_PLACEHOLDER_21@@.</p>
+
+<p>We define canonical quantization for:</p>
+
+<ul>
+  <li>MATH_PRESERVE_PLACEHOLDER_22@@ — the space of
+fiberwise-polynomial functions of degree MATH_PRESERVE_PLACEHOLDER_23@@ on MATH_PRESERVE_PLACEHOLDER_24@@,</li>
+  <li>MATH_PRESERVE_PLACEHOLDER_25@@ — the space of self-adjoint differential operators on
+MATH_PRESERVE_PLACEHOLDER_26@@ of order at most 2.</li>
+</ul>
+
+<p>The non-triviality is that the simple replacement</p>
+
+<p>MATH_PRESERVE_PLACEHOLDER_27@@</p>
+
+<p>is <strong>not coordinate-independent</strong> — it is not a well-defined intrinsic operation.</p>
+
+<h2 id="decomposition-by-fiber-degree">Decomposition by Fiber Degree</h2>
+
+<p>The space MATH_PRESERVE_PLACEHOLDER_28@@ has a canonical direct sum structure</p>
+
+<p>MATH_PRESERVE_PLACEHOLDER_29@@</p>
+
+<p>where each summand consists of functions homogeneous of degree MATH_PRESERVE_PLACEHOLDER_30@@ in the fiber variable MATH_PRESERVE_PLACEHOLDER_31@@. For any MATH_PRESERVE_PLACEHOLDER_32@@, the decomposition MATH_PRESERVE_PLACEHOLDER_33@@ is given intrinsically (without coordinates) by:</p>
+
+<ol>
+  <li>MATH_PRESERVE_PLACEHOLDER_34@@</li>
+  <li>MATH_PRESERVE_PLACEHOLDER_35@@</li>
+  <li>MATH_PRESERVE_PLACEHOLDER_36@@</li>
+</ol>
+
+<p>This decomposition uses only the vector space structure of the fibers MATH_PRESERVE_PLACEHOLDER_37@@, not any metric or connection. We then quantize each piece separately.</p>
+
+<h2 id="zeroth-order">Zeroth Order</h2>
+
+<p>The space MATH_PRESERVE_PLACEHOLDER_38@@ consists of fiberwise-constant functions, which are essentially smooth functions MATH_PRESERVE_PLACEHOLDER_39@@ pulled back along the fiber projection MATH_PRESERVE_PLACEHOLDER_40@@. The quantization is simply the pointwise multiplication operator</p>
+
+<p>MATH_PRESERVE_PLACEHOLDER_41@@</p>
+
+<h2 id="first-order">First Order</h2>
+
+<p>A fiberwise-linear function on MATH_PRESERVE_PLACEHOLDER_42@@ is a smooth section of MATH_PRESERVE_PLACEHOLDER_43@@ — that is, a <strong>vector field</strong> MATH_PRESERVE_PLACEHOLDER_44@@. In local canonical coordinates MATH_PRESERVE_PLACEHOLDER_45@@, the function MATH_PRESERVE_PLACEHOLDER_46@@ corresponds to the vector field MATH_PRESERVE_PLACEHOLDER_47@@ on MATH_PRESERVE_PLACEHOLDER_48@@.</p>
+
+<p>The naive quantization MATH_PRESERVE_PLACEHOLDER_49@@ is not self-adjoint. A direct computation shows that the MATH_PRESERVE_PLACEHOLDER_50@@-adjoint of MATH_PRESERVE_PLACEHOLDER_51@@ is</p>
+
+<p>MATH_PRESERVE_PLACEHOLDER_52@@</p>
+
+<p>where MATH_PRESERVE_PLACEHOLDER_53@@ is the <strong>divergence of MATH_PRESERVE_PLACEHOLDER_54@@ with respect to MATH_PRESERVE_PLACEHOLDER_55@@</strong>, defined as the unique smooth function satisfying</p>
+
+<p>MATH_PRESERVE_PLACEHOLDER_56@@</p>
+
+<p>or equivalently MATH_PRESERVE_PLACEHOLDER_57@@ via Cartan’s formula. In local coordinates with MATH_PRESERVE_PLACEHOLDER_58@@, this is MATH_PRESERVE_PLACEHOLDER_59@@.</p>
+
+<p>The resolution is to take the <strong>self-adjoint part</strong>:</p>
+
+<p>MATH_PRESERVE_PLACEHOLDER_60@@</p>
+
+<p>This is the unique formally self-adjoint first-order differential operator with principal symbol MATH_PRESERVE_PLACEHOLDER_61@@, given the volume form MATH_PRESERVE_PLACEHOLDER_62@@.</p>
+
+<h2 id="second-order">Second Order</h2>
+
+<p>A fiberwise-quadratic function MATH_PRESERVE_PLACEHOLDER_63@@ corresponds canonically to a <strong>symmetric contravariant 2-tensor</strong> MATH_PRESERVE_PLACEHOLDER_64@@ via the polarization identity: MATH_PRESERVE_PLACEHOLDER_65@@. In local coordinates, MATH_PRESERVE_PLACEHOLDER_66@@ corresponds to MATH_PRESERVE_PLACEHOLDER_67@@.</p>
+
+<p>The symmetric 2-tensor MATH_PRESERVE_PLACEHOLDER_68@@ determines a <strong>second-order operator up to a first-order term</strong> — different choices of affine connection give different second-order operators with the same principal symbol, differing by first-order operators. The key result is that the self-adjointness requirement pins down a unique choice:</p>
+
+<p><strong>Theorem.</strong> For any MATH_PRESERVE_PLACEHOLDER_69@@, there is a unique element in the corresponding family of second-order differential operators that is self-adjoint as an operator on MATH_PRESERVE_PLACEHOLDER_70@@.</p>
+
+<p><em>Proof (uniqueness).</em> Suppose MATH_PRESERVE_PLACEHOLDER_71@@ and MATH_PRESERVE_PLACEHOLDER_72@@ are both self-adjoint and have the same principal symbol, so MATH_PRESERVE_PLACEHOLDER_73@@ is a self-adjoint first-order differential operator. The adjoint of MATH_PRESERVE_PLACEHOLDER_74@@ on MATH_PRESERVE_PLACEHOLDER_75@@ is MATH_PRESERVE_PLACEHOLDER_76@@. Self-adjointness MATH_PRESERVE_PLACEHOLDER_77@@ forces MATH_PRESERVE_PLACEHOLDER_78@@, hence MATH_PRESERVE_PLACEHOLDER_79@@ and MATH_PRESERVE_PLACEHOLDER_80@@.</p>
+
+<p><em>Proof (existence).</em> The operator</p>
+
+<p>MATH_PRESERVE_PLACEHOLDER_81@@</p>
+
+<p>is self-adjoint on MATH_PRESERVE_PLACEHOLDER_82@@. Indeed, for compactly supported MATH_PRESERVE_PLACEHOLDER_83@@:</p>
+
+<p>MATH_PRESERVE_PLACEHOLDER_84@@</p>
+
+<p>The coordinate-free description is MATH_PRESERVE_PLACEHOLDER_85@@, where MATH_PRESERVE_PLACEHOLDER_86@@ contracts one index of MATH_PRESERVE_PLACEHOLDER_87@@ against MATH_PRESERVE_PLACEHOLDER_88@@ to produce a vector field, and MATH_PRESERVE_PLACEHOLDER_89@@ is then applied. When MATH_PRESERVE_PLACEHOLDER_90@@ and MATH_PRESERVE_PLACEHOLDER_91@@, this recovers the Laplace-Beltrami operator MATH_PRESERVE_PLACEHOLDER_92@@.</p>
+
+<h2 id="higher-orders">Higher Orders</h2>
+
+<p>Unfortunately, the story stops here. For fiberwise-cubic (and higher) functions, the analogous correspondence still exists — a fiberwise-degree-MATH_PRESERVE_PLACEHOLDER_93@@ function determines a family of order-MATH_PRESERVE_PLACEHOLDER_94@@ operators sharing the same leading symbol, differing by order-MATH_PRESERVE_PLACEHOLDER_95@@ operators. However, the uniqueness theorem <strong>fails</strong> for MATH_PRESERVE_PLACEHOLDER_96@@.</p>
+
+<p>In the third-order case, two self-adjoint operators in the same family can differ by a self-adjoint first-order operator MATH_PRESERVE_PLACEHOLDER_97@@, and the only constraint from self-adjointness is that MATH_PRESERVE_PLACEHOLDER_98@@ is divergence-free with respect to MATH_PRESERVE_PLACEHOLDER_99@@. The space of such vector fields is infinite-dimensional, so the ambiguity is genuine. This is consistent with the <strong>Groenewold-Van Hove obstruction</strong>, which asserts that no quantization map on polynomials of degree MATH_PRESERVE_PLACEHOLDER_100@@ can simultaneously satisfy the Poisson bracket relation, act irreducibly, and extend the Schrödinger representation.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>We constructed a canonical quantization on the cotangent bundle of a smooth manifold MATH_PRESERVE_PLACEHOLDER_101@@ equipped with a volume form MATH_PRESERVE_PLACEHOLDER_102@@, mapping fiberwise polynomials of order at most 2 on MATH_PRESERVE_PLACEHOLDER_103@@ to densely-defined self-adjoint operators on MATH_PRESERVE_PLACEHOLDER_104@@. The procedure is:</p>
+
+<ol>
+  <li><strong>Decompose</strong> MATH_PRESERVE_PLACEHOLDER_105@@ into homogeneous parts: MATH_PRESERVE_PLACEHOLDER_106@@.</li>
+  <li><strong>Quantize each part</strong> by formulas (zeroth order), (first order with symmetrization), and (second order via divergence form).</li>
+  <li><strong>Sum</strong>: MATH_PRESERVE_PLACEHOLDER_107@@.</li>
+</ol>
+
+<p>In local canonical coordinates MATH_PRESERVE_PLACEHOLDER_108@@, the quantization of MATH_PRESERVE_PLACEHOLDER_109@@ is</p>
+
+<p>MATH_PRESERVE_PLACEHOLDER_110@@</p>
+
+<p>where MATH_PRESERVE_PLACEHOLDER_111@@ are scalar functions of MATH_PRESERVE_PLACEHOLDER_112@@ and MATH_PRESERVE_PLACEHOLDER_113@@. This differs from the naive replacement by the first-order correction</p>
+
+<p>MATH_PRESERVE_PLACEHOLDER_114@@</p>
+
+<p>which vanishes in Cartesian coordinates on MATH_PRESERVE_PLACEHOLDER_115@@ (where MATH_PRESERVE_PLACEHOLDER_116@@ and MATH_PRESERVE_PLACEHOLDER_117@@) but is nonzero in general curvilinear coordinates.</p>
+
+<p>In a Hamiltonian system from classical mechanics, a Riemannian metric MATH_PRESERVE_PLACEHOLDER_118@@ determines the kinetic energy and the natural volume form MATH_PRESERVE_PLACEHOLDER_119@@. In this case the kinetic energy operator quantizes to MATH_PRESERVE_PLACEHOLDER_120@@, and for a particle of mass MATH_PRESERVE_PLACEHOLDER_121@@ in three-dimensional Euclidean space (MATH_PRESERVE_PLACEHOLDER_122@@) this becomes the familiar MATH_PRESERVE_PLACEHOLDER_123@@.</p>]]></content><author><name>Andrew Qing He</name></author><category term="Quantum Mechanics" /><category term="Differential Geometry" /><category term="Mathematical Physics" /><category term="Quantization" /><summary type="html"><![CDATA[Canonical Quantization on Cotangent Bundles]]></summary></entry><entry><title type="html">Welcome to the Research Blog</title><link href="https://andrewqinghe.github.io/2024/03/20/welcome-to-the-research-blog.html" rel="alternate" type="text/html" title="Welcome to the Research Blog" /><published>2024-03-20T00:00:00+00:00</published><updated>2024-03-20T00:00:00+00:00</updated><id>https://andrewqinghe.github.io/2024/03/20/welcome-to-the-research-blog</id><content type="html" xml:base="https://andrewqinghe.github.io/2024/03/20/welcome-to-the-research-blog.html"><![CDATA[<p>Welcome to my new research blog! This space will feature short articles on computational mathematics, machine learning for PDEs, stochastic methods, and scientific computing.</p>
+
+<h2 id="what-to-expect">What to Expect</h2>
+
+<p>In this blog, I’ll be sharing:</p>
+
+<ol>
+  <li><strong>Research insights</strong> from my work on deep learning methods for PDEs</li>
+  <li><strong>Tutorial-style articles</strong> on scientific computing techniques</li>
+  <li><strong>Updates</strong> on recent developments in computational mathematics</li>
+  <li><strong>Thoughts</strong> on the intersection of mathematics and machine learning</li>
+</ol>
+
+<h2 id="how-this-blog-works">How This Blog Works</h2>
+
+<p>This blog system is designed to be simple and flexible:</p>
+
+<ul>
+  <li>Articles are written in <strong>Markdown</strong> format</li>
+  <li>Each article includes metadata (title, date, author, tags)</li>
+  <li>The system automatically parses and displays articles</li>
+  <li>You can write new articles by creating Markdown files</li>
+</ul>
+
+<h2 id="example-code">Example Code</h2>
+
+<p>Here’s a simple Python example of a numerical method:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="k">def</span> <span class="nf">finite_difference</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
+    <span class="s">"""Compute finite difference approximation of derivative."""</span>
+    <span class="nf">return </span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
+
+<span class="c1"># Example usage
+</span><span class="k">def</span> <span class="nf">example_function</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">np</span><span class="p">.</span><span class="nf">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">x_value</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">derivative</span> <span class="o">=</span> <span class="nf">finite_difference</span><span class="p">(</span><span class="n">example_function</span><span class="p">,</span> <span class="n">x_value</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Derivative at x=</span><span class="si">{</span><span class="n">x_value</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">derivative</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="looking-ahead">Looking Ahead</h2>
+
+<p>I’m excited to share more content on topics like:</p>
+
+<ul>
+  <li><strong>DeepMartNet</strong> for solving elliptic PDEs</li>
+  <li><strong>Weak adversarial training</strong> for Fokker-Planck equations</li>
+  <li><strong>Stochastic computing</strong> methods</li>
+  <li><strong>Geometric approaches</strong> to machine learning</li>
+</ul>
+
+<p>Stay tuned for more articles, and feel free to reach out with questions or suggestions!</p>
+
+<p><em>Andrew Qing He</em></p>]]></content><author><name>Andrew Qing He</name></author><category term="Announcement" /><category term="Blog" /><category term="Research" /><summary type="html"><![CDATA[Welcome to my new research blog! This space will feature short articles on computational mathematics, machine learning for PDEs, stochastic methods, and scientific computing.]]></summary></entry></feed>
