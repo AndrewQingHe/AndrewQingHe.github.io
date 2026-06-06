@@ -9,12 +9,13 @@ github_username: AndrewQingHe
 # Build settings
 markdown: kramdown
 kramdown:
-  math_engine: mathjax
+  math_engine: katex
   syntax_highlighter: rouge
   input: GFM
   hard_wrap: false
   parse_block_html: true
-  editors: []
+  parse_span_html: true
+  inline_html: true
   math_engine_opts:
     preview: false
 
