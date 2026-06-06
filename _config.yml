@@ -9,7 +9,7 @@ github_username: AndrewQingHe
 # Build settings
 markdown: kramdown
 kramdown:
-  math_engine: katex
+  math_engine: mathjax
   syntax_highlighter: rouge
   input: GFM
   hard_wrap: false
