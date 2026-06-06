@@ -1,71 +1,56 @@
 <h1 id="canonical-quantization-on-cotangent-bundles">Canonical Quantization on Cotangent Bundles</h1>
 
-<p>
-  In typical physics textbooks, <strong>canonical quantization</strong> transfers a Hamiltonian $H(q^1, \ldots, q^n,
-  p_1, \ldots, p_n)$ defined on $\mathbb{R}^{2n}$ by replacing $p_i$ with $\frac{\hbar}{i}\frac{\partial}{\partial q^i}$
-  and $q^i$ with the multiplication operator $q^i \cdot$, yielding a densely-defined operator on $L^2(\mathbb{R}^n)$.
-  This works perfectly for Euclidean space in Cartesian coordinates. However, the simple replacement framework does not
-  work in general coordinates.
-</p>
+<p>In typical physics textbooks, <strong>canonical quantization</strong> transfers a Hamiltonian
+$H(q^1, \ldots, q^n, p_1, \ldots, p_n)$ defined on $\mathbb{R}^{2n}$ by replacing
+$p_i$ with $\frac{\hbar}{i}\frac{\partial}{\partial q^i}$ and $q^i$ with the
+multiplication operator $q^i \cdot$, yielding a densely-defined operator on
+$L^2(\mathbb{R}^n)$. This works perfectly for Euclidean space in Cartesian
+coordinates. However, the simple replacement framework does not work in general
+coordinates.</p>
 
-<p>A simple example: the kinetic energy of a particle of mass $m$ in spherical coordinates $(r, \theta, \varphi)$ is</p>
+<p>A simple example: the kinetic energy of a particle of mass $m$ in spherical
+coordinates $(r, \theta, \varphi)$ is</p>
 
 \[T = \frac{1}{2m}\left(p_r^2 + \frac{p_\theta^2}{r^2} + \frac{p_\varphi^2}{r^2\sin^2\theta}\right).\]
 
-<p>
-  The naive replacement $p_r, p_\theta, p_\varphi \to \frac{\hbar}{i}\partial_r, \frac{\hbar}{i}\partial_\theta,
-  \frac{\hbar}{i}\partial_\varphi$ gives
-</p>
+<p>The naive replacement $p_r, p_\theta, p_\varphi \to \frac{\hbar}{i}\partial_r,
+\frac{\hbar}{i}\partial_\theta, \frac{\hbar}{i}\partial_\varphi$ gives</p>
 
-\[\hat{T}^? = -\frac{\hbar^2}{2m}\left(\frac{\partial^2}{\partial r^2} +
-\frac{1}{r^2}\frac{\partial^2}{\partial\theta^2} +
-\frac{1}{r^2\sin^2\theta}\frac{\partial^2}{\partial\varphi^2}\right)\]
+\[\hat{T}^? = -\frac{\hbar^2}{2m}\left(\frac{\partial^2}{\partial r^2} + \frac{1}{r^2}\frac{\partial^2}{\partial\theta^2} + \frac{1}{r^2\sin^2\theta}\frac{\partial^2}{\partial\varphi^2}\right)\]
 
-<p>
-  while the correct kinetic energy operator (the one used for, e.g., the hydrogen atom) is the Laplace-Beltrami operator
-</p>
+<p>while the correct kinetic energy operator (the one used for, e.g., the hydrogen
+atom) is the Laplace-Beltrami operator</p>
 
-\[\hat{T} = -\frac{\hbar^2}{2m}\nabla^2 = -\frac{\hbar^2}{2m}\left(\frac{1}{r^2}\frac{\partial}{\partial
-r}\left(r^2\frac{\partial}{\partial r}\right) +
-\frac{1}{r^2\sin\theta}\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial}{\partial\theta}\right) +
-\frac{1}{r^2\sin^2\theta}\frac{\partial^2}{\partial\varphi^2}\right).\]
+\[\hat{T} = -\frac{\hbar^2}{2m}\nabla^2 = -\frac{\hbar^2}{2m}\left(\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac{\partial}{\partial r}\right) + \frac{1}{r^2\sin\theta}\frac{\partial}{\partial\theta}\left(\sin\theta\frac{\partial}{\partial\theta}\right) + \frac{1}{r^2\sin^2\theta}\frac{\partial^2}{\partial\varphi^2}\right).\]
 
 <p>Their difference is the first-order operator</p>
 
-\[\hat{T} - \hat{T}^? = \frac{\hbar^2}{2m}\left(\frac{2}{r}\frac{\partial}{\partial r} +
-\frac{\cos\theta}{r^2\sin\theta}\frac{\partial}{\partial\theta}\right) \neq 0.\]
+\[\hat{T} - \hat{T}^? = \frac{\hbar^2}{2m}\left(\frac{2}{r}\frac{\partial}{\partial r} + \frac{\cos\theta}{r^2\sin\theta}\frac{\partial}{\partial\theta}\right) \neq 0.\]
 
-<p>
-  So $\hat{T}^? \neq \hat{T}$ and the simple replacement fails. This note develops the correct, coordinate-free
-  definition of canonical quantization for Hamiltonians that are fiberwise polynomial of degree at most 2 on a cotangent
-  bundle.
-</p>
+<p>So $\hat{T}^? \neq \hat{T}$ and the simple replacement fails. This note develops the
+correct, coordinate-free definition of canonical quantization for Hamiltonians that
+are fiberwise polynomial of degree at most 2 on a cotangent bundle.</p>
 
 <h2 id="setup">Setup</h2>
 
-<p>
-  Let $M$ be a smooth manifold with a volume form $\mu$, let $L^2(M, \mu; \mathbb{C})$ be the Hilbert space of complex
-  square-integrable functions on $M$, and let $T^*M$ be its cotangent bundle. A <strong>quantization</strong> is a
-  linear map from a subspace of real functions on $T^*M$ to a subspace of densely-defined self-adjoint operators on
-  $L^2(M, \mu; \mathbb{C})$.
-</p>
+<p>Let $M$ be a smooth manifold with a volume form $\mu$, let $L^2(M, \mu; \mathbb{C})$
+be the Hilbert space of complex square-integrable functions on $M$, and let $T^<em>M$
+be its cotangent bundle. A <strong>quantization</strong> is a linear map from a subspace of real
+functions on $T^</em>M$ to a subspace of densely-defined self-adjoint operators on
+$L^2(M, \mu; \mathbb{C})$.</p>
 
 <p>We define canonical quantization for:</p>
 
 <ul>
-  <li>
-    $\mathcal{O}_C = {F : F = a^{ij}(q)p_ip_j + b^i(q)p_i + c(q)}$ — the space of fiberwise-polynomial functions of
-    degree $\leq 2$ on $T^*M$,
-  </li>
-  <li>
-    $\mathcal{O}_Q$ — the space of self-adjoint differential operators on $L^2(M,\mu;\mathbb{C})$ of order at most 2.
-  </li>
+  <li>$\mathcal{O}_C = {F : F = a^{ij}(q)p_ip_j + b^i(q)p_i + c(q)}$ — the space of
+fiberwise-polynomial functions of degree $\leq 2$ on $T^*M$,</li>
+  <li>$\mathcal{O}_Q$ — the space of self-adjoint differential operators on
+$L^2(M,\mu;\mathbb{C})$ of order at most 2.</li>
 </ul>
 
 <p>The non-triviality is that the simple replacement</p>
 
-\[a^{ij}(q)p_ip_j + b^i(q)p_i + c(q) \;\longmapsto\; -\hbar^2 a^{ij}(q)\frac{\partial^2}{\partial q^i \partial q^j} +
-\frac{\hbar}{i}b^i(q)\frac{\partial}{\partial q^i} + c(q)\]
+\[a^{ij}(q)p_ip_j + b^i(q)p_i + c(q) \;\longmapsto\; -\hbar^2 a^{ij}(q)\frac{\partial^2}{\partial q^i \partial q^j} + \frac{\hbar}{i}b^i(q)\frac{\partial}{\partial q^i} + c(q)\]
 
 <p>is <strong>not coordinate-independent</strong> — it is not a well-defined intrinsic operation.</p>
 
@@ -75,10 +60,9 @@ r}\left(r^2\frac{\partial}{\partial r}\right) +
 
 \[\mathcal{O}_C = \mathcal{O}_C^{(0)} \oplus \mathcal{O}_C^{(1)} \oplus \mathcal{O}_C^{(2)}\]
 
-<p>
-  where each summand consists of functions homogeneous of degree $0, 1, 2$ in the fiber variable $p$. For any $F \in
-  \mathcal{O}_C$, the decomposition $F = F^{(0)} + F^{(1)} + F^{(2)}$ is given intrinsically (without coordinates) by:
-</p>
+<p>where each summand consists of functions homogeneous of degree $0, 1, 2$ in the
+fiber variable $p$. For any $F \in \mathcal{O}_C$, the decomposition $F = F^{(0)} +
+F^{(1)} + F^{(2)}$ is given intrinsically (without coordinates) by:</p>
 
 <ol>
   <li>$F^{(0)}(q, p) = F(q, 0)$</li>
@@ -95,160 +79,128 @@ r}\left(r^2\frac{\partial}{\partial r}\right) +
   <li>$F^{(2)}(q, p) = F(q,p) - F^{(0)}(q,p) - F^{(1)}(q,p)$</li>
 </ol>
 
-<p>
-  This decomposition uses only the vector space structure of the fibers $T^*_qM$, not any metric or connection. We then
-  quantize each piece separately.
-</p>
+<p>This decomposition uses only the vector space structure of the fibers $T^*_qM$, not
+any metric or connection. We then quantize each piece separately.</p>
 
 <h2 id="zeroth-order">Zeroth Order</h2>
 
-<p>
-  The space $\mathcal{O}_C^{(0)}$ consists of fiberwise-constant functions, which are essentially smooth functions $V: M
-  \to \mathbb{R}$ pulled back along the fiber projection $\pi: T^*M \to M$. The quantization is simply the pointwise
-  multiplication operator
-</p>
+<p>The space $\mathcal{O}_C^{(0)}$ consists of fiberwise-constant functions, which are
+essentially smooth functions $V: M \to \mathbb{R}$ pulled back along the fiber
+projection $\pi: T^*M \to M$. The quantization is simply the pointwise multiplication
+operator</p>
 
 \[\hat{V}: \psi \mapsto V\psi.\]
 
 <h2 id="first-order">First Order</h2>
 
-<p>
-  A fiberwise-linear function on $T^*M$ is a smooth section of $(T^*_qM)^* \cong T_qM$ — that is, a
-  <strong>vector field</strong> $X \in \mathfrak{X}(M)$. In local canonical coordinates $(q^i, p_i)$, the function $X =
-  b^i(q)p_i$ corresponds to the vector field $b^i(q)\frac{\partial}{\partial q^i}$ on $M$.
-</p>
+<p>A fiberwise-linear function on $T^<em>M$ is a smooth section of $(T^</em>_qM)^* \cong T_qM$
+— that is, a <strong>vector field</strong> $X \in \mathfrak{X}(M)$. In local canonical coordinates
+$(q^i, p_i)$, the function $X = b^i(q)p_i$ corresponds to the vector field
+$b^i(q)\frac{\partial}{\partial q^i}$ on $M$.</p>
 
-<p>
-  The naive quantization $\psi \mapsto \frac{\hbar}{i}X\psi$ is not self-adjoint. A direct computation shows that the
-  $L^2(M,\mu)$-adjoint of $\frac{\hbar}{i}X$ is
-</p>
+<p>The naive quantization $\psi \mapsto \frac{\hbar}{i}X\psi$ is not self-adjoint. A
+direct computation shows that the $L^2(M,\mu)$-adjoint of $\frac{\hbar}{i}X$ is</p>
 
 \[\left(\frac{\hbar}{i}X\right)^\dagger = \frac{\hbar}{i}\left(X + \mathrm{div}_\mu(X)\right)\]
 
-<p>
-  where $\mathrm{div}_\mu(X)$ is the <strong>divergence of $X$ with respect to $\mu$</strong>, defined as the unique
-  smooth function satisfying
-</p>
+<p>where $\mathrm{div}_\mu(X)$ is the <strong>divergence of $X$ with respect to $\mu$</strong>,
+defined as the unique smooth function satisfying</p>
 
 \[\mathcal{L}_X\mu = \mathrm{div}_\mu(X)\cdot\mu,\]
 
-<p>
-  or equivalently $\mathrm{div}<em
-    >\mu(X)\cdot\mu = d(\iota_X\mu)$ via Cartan’s formula. In local coordinates with $\mu = \rho(q)\,d^nq$, this is
-    $\mathrm{div}</em
-  >\mu(X) = \frac{1}{\rho}\partial_i(\rho X^i)$.
-</p>
+<p>or equivalently $\mathrm{div}<em>\mu(X)\cdot\mu = d(\iota_X\mu)$ via Cartan’s formula.
+In local coordinates with $\mu = \rho(q)\,d^nq$, this is
+$\mathrm{div}</em>\mu(X) = \frac{1}{\rho}\partial_i(\rho X^i)$.</p>
 
 <p>The resolution is to take the <strong>self-adjoint part</strong>:</p>
 
-\[\hat{X} := \frac{1}{2}\left(\frac{\hbar}{i}X + \left(\frac{\hbar}{i}X\right)^\dagger\right) = \frac{\hbar}{i}\left(X +
-\frac{1}{2}\mathrm{div}_\mu(X)\right).\]
+\[\hat{X} := \frac{1}{2}\left(\frac{\hbar}{i}X + \left(\frac{\hbar}{i}X\right)^\dagger\right) = \frac{\hbar}{i}\left(X + \frac{1}{2}\mathrm{div}_\mu(X)\right).\]
 
-<p>
-  This is the unique formally self-adjoint first-order differential operator with principal symbol $\ell_X(q,\xi) =
-  \xi(X(q))$, given the volume form $\mu$.
-</p>
+<p>This is the unique formally self-adjoint first-order differential operator with
+principal symbol $\ell_X(q,\xi) = \xi(X(q))$, given the volume form $\mu$.</p>
 
 <h2 id="second-order">Second Order</h2>
 
-<p>
-  A fiberwise-quadratic function $F \in \mathcal{O}_C^{(2)}$ corresponds canonically to a
-  <strong>symmetric contravariant 2-tensor</strong> $\sigma \in \Gamma(\mathrm{Sym}^2(TM))$ via the polarization
-  identity: $B_F(\alpha_1, \alpha_2) = \frac{1}{2}(F(\alpha_1 + \alpha_2) - F(\alpha_1) - F(\alpha_2))$. In local
-  coordinates, $F = a^{ij}(q)p_ip_j$ corresponds to $a^{ij}(q)\partial_i \otimes \partial_j$.
-</p>
+<p>A fiberwise-quadratic function $F \in \mathcal{O}_C^{(2)}$ corresponds canonically to
+a <strong>symmetric contravariant 2-tensor</strong> $\sigma \in \Gamma(\mathrm{Sym}^2(TM))$ via
+the polarization identity: $B_F(\alpha_1, \alpha_2) = \frac{1}{2}(F(\alpha_1 +
+\alpha_2) - F(\alpha_1) - F(\alpha_2))$. In local coordinates, $F = a^{ij}(q)p_ip_j$
+corresponds to $a^{ij}(q)\partial_i \otimes \partial_j$.</p>
 
-<p>
-  The symmetric 2-tensor $\sigma$ determines a <strong>second-order operator up to a first-order term</strong> —
-  different choices of affine connection give different second-order operators with the same principal symbol, differing
-  by first-order operators. The key result is that the self-adjointness requirement pins down a unique choice:
-</p>
+<p>The symmetric 2-tensor $\sigma$ determines a <strong>second-order operator up to a
+first-order term</strong> — different choices of affine connection give different second-order
+operators with the same principal symbol, differing by first-order operators. The
+key result is that the self-adjointness requirement pins down a unique choice:</p>
 
-<p>
-  <strong>Theorem.</strong> For any $F \in \mathcal{O}_C^{(2)}$, there is a unique element in the corresponding family
-  of second-order differential operators that is self-adjoint as an operator on $L^2(M, \mu; \mathbb{C})$.
-</p>
+<p><strong>Theorem.</strong> For any $F \in \mathcal{O}_C^{(2)}$, there is a unique element in the
+corresponding family of second-order differential operators that is self-adjoint as an
+operator on $L^2(M, \mu; \mathbb{C})$.</p>
 
-<p>
-  <em>Proof (uniqueness).</em> Suppose $\sigma$ and $\tilde\sigma$ are both self-adjoint and have the same principal
-  symbol, so $D = \sigma - \tilde\sigma$ is a self-adjoint first-order differential operator. The adjoint of $D =
-  A^i\partial_i$ on $L^2(M,\mu)$ is $D^\dagger = -(A^i\partial_i + \mathrm{div}_\mu(A))$. Self-adjointness $D^\dagger =
-  D$ forces $-A^i = A^i$, hence $A = 0$ and $D = 0$.
-</p>
+<p><em>Proof (uniqueness).</em> Suppose $\sigma$ and $\tilde\sigma$ are both self-adjoint and
+have the same principal symbol, so $D = \sigma - \tilde\sigma$ is a self-adjoint
+first-order differential operator. The adjoint of $D = A^i\partial_i$ on $L^2(M,\mu)$
+is $D^\dagger = -(A^i\partial_i + \mathrm{div}_\mu(A))$. Self-adjointness
+$D^\dagger = D$ forces $-A^i = A^i$, hence $A = 0$ and $D = 0$.</p>
 
 <p><em>Proof (existence).</em> The operator</p>
 
-\[\hat{F}^{(2)}(\psi) := -\frac{\hbar^2}{\mu}\frac{\partial}{\partial q^i}\left(\mu\, a^{ij}\frac{\partial\psi}{\partial
-q^j}\right)\]
+\[\hat{F}^{(2)}(\psi) := -\frac{\hbar^2}{\mu}\frac{\partial}{\partial q^i}\left(\mu\, a^{ij}\frac{\partial\psi}{\partial q^j}\right)\]
 
 <p>is self-adjoint on $L^2(M,\mu)$. Indeed, for compactly supported $\phi, \psi$:</p>
 
-\[\int_M \phi^*\,\hat{F}^{(2)}(\psi)\,\mu = \hbar^2\int_M a^{ij}\frac{\partial\phi^*}{\partial
-q^i}\frac{\partial\psi}{\partial q^j}\,\mu = \int_M \hat{F}^{(2)}(\phi)^*\,\psi\,\mu. \qquad\square\]
+\[\int_M \phi^*\,\hat{F}^{(2)}(\psi)\,\mu = \hbar^2\int_M a^{ij}\frac{\partial\phi^*}{\partial q^i}\frac{\partial\psi}{\partial q^j}\,\mu = \int_M \hat{F}^{(2)}(\phi)^*\,\psi\,\mu. \qquad\square\]
 
-<p>
-  The coordinate-free description is $\hat{F}^{(2)}(\psi) = -\hbar^2\,\mathrm{div}_\mu(\sigma^\flat\,d\psi)$, where
-  $\sigma^\flat(\alpha) = \sigma(\alpha, \cdot)$ contracts one index of $\sigma$ against $d\psi$ to produce a vector
-  field, and $\mathrm{div}_\mu$ is then applied. When $\mu = \mathrm{dvol}_g$ and $\sigma = g^{-1}$, this recovers the
-  Laplace-Beltrami operator $\Delta_g$.
-</p>
+<p>The coordinate-free description is $\hat{F}^{(2)}(\psi) = -\hbar^2\,\mathrm{div}<em>\mu(\sigma^\flat\,d\psi)$,
+where $\sigma^\flat(\alpha) = \sigma(\alpha, \cdot)$ contracts one index of $\sigma$
+against $d\psi$ to produce a vector field, and $\mathrm{div}</em>\mu$ is then applied.
+When $\mu = \mathrm{dvol}_g$ and $\sigma = g^{-1}$, this recovers the Laplace-Beltrami
+operator $\Delta_g$.</p>
 
 <h2 id="higher-orders">Higher Orders</h2>
 
-<p>
-  Unfortunately, the story stops here. For fiberwise-cubic (and higher) functions, the analogous correspondence still
-  exists — a fiberwise-degree-$k$ function determines a family of order-$k$ operators sharing the same leading symbol,
-  differing by order-$(k-1)$ operators. However, the uniqueness theorem <strong>fails</strong> for $k \geq 3$.
-</p>
+<p>Unfortunately, the story stops here. For fiberwise-cubic (and higher) functions, the
+analogous correspondence still exists — a fiberwise-degree-$k$ function determines a
+family of order-$k$ operators sharing the same leading symbol, differing by
+order-$(k-1)$ operators. However, the uniqueness theorem <strong>fails</strong> for $k \geq 3$.</p>
 
-<p>
-  In the third-order case, two self-adjoint operators in the same family can differ by a self-adjoint first-order
-  operator $\frac{\hbar}{i}b^i\partial_i$, and the only constraint from self-adjointness is that $b^i$ is
-  divergence-free with respect to $\mu$. The space of such vector fields is infinite-dimensional, so the ambiguity is
-  genuine. This is consistent with the <strong>Groenewold-Van Hove obstruction</strong>, which asserts that no
-  quantization map on polynomials of degree $\geq 3$ can simultaneously satisfy the Poisson bracket relation, act
-  irreducibly, and extend the Schrödinger representation.
-</p>
+<p>In the third-order case, two self-adjoint operators in the same family can differ by a
+self-adjoint first-order operator $\frac{\hbar}{i}b^i\partial_i$, and the only
+constraint from self-adjointness is that $b^i$ is divergence-free with respect to
+$\mu$. The space of such vector fields is infinite-dimensional, so the ambiguity is
+genuine. This is consistent with the <strong>Groenewold-Van Hove obstruction</strong>, which
+asserts that no quantization map on polynomials of degree $\geq 3$ can simultaneously
+satisfy the Poisson bracket relation, act irreducibly, and extend the Schrödinger
+representation.</p>
 
 <h2 id="summary">Summary</h2>
 
-<p>
-  We constructed a canonical quantization on the cotangent bundle of a smooth manifold $M$ equipped with a volume form
-  $\mu$, mapping fiberwise polynomials of order at most 2 on $T^*M$ to densely-defined self-adjoint operators on $L^2(M,
-  \mu; \mathbb{C})$. The procedure is:
-</p>
+<p>We constructed a canonical quantization on the cotangent bundle of a smooth manifold
+$M$ equipped with a volume form $\mu$, mapping fiberwise polynomials of order at most
+2 on $T^*M$ to densely-defined self-adjoint operators on $L^2(M, \mu; \mathbb{C})$.
+The procedure is:</p>
 
 <ol>
   <li><strong>Decompose</strong> $F$ into homogeneous parts: $F = F^{(0)} + F^{(1)} + F^{(2)}$.</li>
-  <li>
-    <strong>Quantize each part</strong> by formulas (zeroth order), (first order with symmetrization), and (second order
-    via divergence form).
-  </li>
+  <li><strong>Quantize each part</strong> by formulas (zeroth order), (first order with symmetrization), and (second order via divergence form).</li>
   <li><strong>Sum</strong>: $\hat{F} = \hat{F}^{(0)} + \hat{F}^{(1)} + \hat{F}^{(2)}$.</li>
 </ol>
 
-<p>In local canonical coordinates $(q^i, p_i)$, the quantization of $F = a^{ij}p_ip_j + b^ip_i + c$ is</p>
+<p>In local canonical coordinates $(q^i, p_i)$, the quantization of $F = a^{ij}p_ip_j +
+b^ip_i + c$ is</p>
 
-\[\hat{F} = -\frac{\hbar^2}{\mu}\frac{\partial}{\partial q^i}\!\left(\mu\, a^{ij}\frac{\partial}{\partial q^j}\right) +
-\frac{\hbar}{i}\!\left(b^i\frac{\partial}{\partial q^i} + \frac{1}{2\mu}\frac{\partial(\mu b^i)}{\partial q^i}\right) +
-c\]
+\[\hat{F} = -\frac{\hbar^2}{\mu}\frac{\partial}{\partial q^i}\!\left(\mu\, a^{ij}\frac{\partial}{\partial q^j}\right) + \frac{\hbar}{i}\!\left(b^i\frac{\partial}{\partial q^i} + \frac{1}{2\mu}\frac{\partial(\mu b^i)}{\partial q^i}\right) + c\]
 
-<p>
-  where $a^{ij}, b^i, c, \mu$ are scalar functions of $(q^i)$ and $a^{ij} = a^{ji}$. This differs from the naive
-  replacement by the first-order correction
-</p>
+<p>where $a^{ij}, b^i, c, \mu$ are scalar functions of $(q^i)$ and $a^{ij} = a^{ji}$.
+This differs from the naive replacement by the first-order correction</p>
 
-\[-\frac{\hbar^2}{\mu}\frac{\partial(\mu a^{ij})}{\partial q^i}\frac{\partial}{\partial q^j} +
-\frac{\hbar}{2i\mu}\frac{\partial(\mu b^i)}{\partial q^i}\]
+\[-\frac{\hbar^2}{\mu}\frac{\partial(\mu a^{ij})}{\partial q^i}\frac{\partial}{\partial q^j} + \frac{\hbar}{2i\mu}\frac{\partial(\mu b^i)}{\partial q^i}\]
 
-<p>
-  which vanishes in Cartesian coordinates on $\mathbb{R}^n$ (where $\mu = d^nq$ and $\partial_i\mu = 0$) but is nonzero
-  in general curvilinear coordinates.
-</p>
+<p>which vanishes in Cartesian coordinates on $\mathbb{R}^n$ (where $\mu = d^nq$ and
+$\partial_i\mu = 0$) but is nonzero in general curvilinear coordinates.</p>
 
-<p>
-  In a Hamiltonian system from classical mechanics, a Riemannian metric $g$ determines the kinetic energy and the
-  natural volume form $\mu = \mathrm{dvol}_g = \sqrt{\det g}\,d^nq$. In this case the kinetic energy operator quantizes
-  to $\hat{T} = -\frac{\hbar^2}{2m}\Delta_g$, and for a particle of mass $m$ in three-dimensional Euclidean space
-  ($g_{ij} = \frac{1}{m}\delta_{ij}$) this becomes the familiar $\hat{T} = -\frac{\hbar^2}{2m}\nabla^2$.
-</p>
+<p>In a Hamiltonian system from classical mechanics, a Riemannian metric $g$ determines
+the kinetic energy and the natural volume form $\mu = \mathrm{dvol}<em>g =
+\sqrt{\det g}\,d^nq$. In this case the kinetic energy operator quantizes to
+$\hat{T} = -\frac{\hbar^2}{2m}\Delta_g$, and for a particle of mass $m$ in
+three-dimensional Euclidean space ($g</em>{ij} = \frac{1}{m}\delta_{ij}$) this becomes
+the familiar $\hat{T} = -\frac{\hbar^2}{2m}\nabla^2$.</p>
