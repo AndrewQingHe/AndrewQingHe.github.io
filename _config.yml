@@ -6,6 +6,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://AndrewQingHe.github.io" # the base hostname & protocol for your site
 github_username: AndrewQingHe
 
+google_site_verification: "_7OFGGG4QvFxn_MCIVK8Ur7f9HqAYf4p3b8sAxPvzJE"
+# <meta name="google-site-verification" content="_7OFGGG4QvFxn_MCIVK8Ur7f9HqAYf4p3b8sAxPvzJE" />
+
 # Build settings
 markdown: kramdown
 kramdown:
