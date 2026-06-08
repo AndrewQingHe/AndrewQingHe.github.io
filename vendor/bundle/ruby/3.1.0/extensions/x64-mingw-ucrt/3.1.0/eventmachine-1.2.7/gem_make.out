@@ -1,0 +1,20 @@
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+C:/Ruby31-x64/bin/ruby.exe -I C:/Ruby31-x64/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20260607-24112-jar30f sitelibdir\=./.gem.20260607-24112-jar30f clean
+bash.exe: warning: could not find /tmp, please create!
+
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20260607-24112-jar30f sitelibdir\=./.gem.20260607-24112-jar30f
+generating fastfilereaderext-x64-mingw-ucrt.def
+bash.exe: warning: could not find /tmp, please create!
+compiling mapper.cpp
+compiling rubymain.cpp
+linking shared-object fastfilereaderext.so
+
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make DESTDIR\= sitearchdir\=./.gem.20260607-24112-jar30f sitelibdir\=./.gem.20260607-24112-jar30f install
+bash.exe: warning: could not find /tmp, please create!
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20260607-24112-jar30f

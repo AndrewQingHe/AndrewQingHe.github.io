@@ -39,7 +39,7 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Welcome to the Research Blog | Andrew Qing He - Personal Website</title>
-<meta name="generator" content="Jekyll v4.3.2" />
+<meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Welcome to the Research Blog" />
 <meta name="author" content="Andrew Qing He" />
 <meta property="og:locale" content="en_US" />
@@ -162,7 +162,7 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
 <span class="k">def</span> <span class="nf">finite_difference</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
-    <span class="s">"""Compute finite difference approximation of derivative."""</span>
+    <span class="sh">"""</span><span class="s">Compute finite difference approximation of derivative.</span><span class="sh">"""</span>
     <span class="nf">return </span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">h</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">h</span><span class="p">)</span>
 
 <span class="c1"># Example usage
@@ -171,7 +171,7 @@
 
 <span class="n">x_value</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="n">derivative</span> <span class="o">=</span> <span class="nf">finite_difference</span><span class="p">(</span><span class="n">example_function</span><span class="p">,</span> <span class="n">x_value</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Derivative at x=</span><span class="si">{</span><span class="n">x_value</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">derivative</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Derivative at x=</span><span class="si">{</span><span class="n">x_value</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">derivative</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="looking-ahead">Looking Ahead</h2>

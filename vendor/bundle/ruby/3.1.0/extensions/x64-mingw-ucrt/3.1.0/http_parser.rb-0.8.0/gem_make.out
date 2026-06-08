@@ -1,0 +1,22 @@
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+C:/Ruby31-x64/bin/ruby.exe -I C:/Ruby31-x64/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260607-24112-qapuhq sitelibdir\=./.gem.20260607-24112-qapuhq clean
+bash.exe: warning: could not find /tmp, please create!
+
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260607-24112-qapuhq sitelibdir\=./.gem.20260607-24112-qapuhq
+generating ruby_http_parser-x64-mingw-ucrt.def
+bash.exe: warning: could not find /tmp, please create!
+compiling ruby_http_parser.c
+bash.exe: warning: could not find /tmp, please create!
+compiling ryah_http_parser.c
+bash.exe: warning: could not find /tmp, please create!
+linking shared-object ruby_http_parser.so
+
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20260607-24112-qapuhq sitelibdir\=./.gem.20260607-24112-qapuhq install
+bash.exe: warning: could not find /tmp, please create!
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20260607-24112-qapuhq

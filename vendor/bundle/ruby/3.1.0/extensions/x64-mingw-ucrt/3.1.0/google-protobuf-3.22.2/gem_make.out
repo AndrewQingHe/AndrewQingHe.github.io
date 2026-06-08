@@ -1,0 +1,52 @@
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/google-protobuf-3.22.2/ext/google/protobuf_c
+C:/Ruby31-x64/bin/ruby.exe -I C:/Ruby31-x64/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/google-protobuf-3.22.2/ext/google/protobuf_c
+make DESTDIR\= sitearchdir\=./.gem.20260607-24112-bh1zfa sitelibdir\=./.gem.20260607-24112-bh1zfa clean
+bash.exe: warning: could not find /tmp, please create!
+
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/google-protobuf-3.22.2/ext/google/protobuf_c
+make DESTDIR\= sitearchdir\=./.gem.20260607-24112-bh1zfa sitelibdir\=./.gem.20260607-24112-bh1zfa
+generating protobuf_c-x64-mingw-ucrt.def
+bash.exe: warning: could not find /tmp, please create!
+compiling protobuf.c
+compiling convert.c
+compiling defs.c
+compiling message.c
+message.c: In function 'Map_initialize_kwarg':
+message.c:509:24: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  509 |     upb_MiniTable* t = upb_MessageDef_MiniTable(map_init->val_type.def.msgdef);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~
+message.c: In function 'MessageValue_FromValue':
+message.c:540:24: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  540 |     upb_MiniTable* t = upb_MessageDef_MiniTable(info.def.msgdef);
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~
+message.c: In function 'Message_initialize':
+message.c:656:22: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  656 |   upb_MiniTable* t = upb_MessageDef_MiniTable(self->msgdef);
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~
+compiling repeated_field.c
+compiling map.c
+map.c: In function 'Map_delete':
+map.c:468:26: warning: passing argument 1 of 'upb_Map_Delete' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  468 |   if (upb_Map_Delete(self->map, key_upb, &val_upb)) {
+      |                      ~~~~^~~~~
+In file included from defs.h:37,
+                 from protobuf.h:38,
+                 from convert.h:36,
+                 from map.c:31:
+ruby-upb.h:897:38: note: expected 'upb_Map *' but argument is of type 'const upb_Map *'
+  897 | UPB_API bool upb_Map_Delete(upb_Map* map, upb_MessageValue key,
+      |                             ~~~~~~~~~^~~
+compiling ruby-upb.c
+compiling wrap_memcpy.c
+compiling ./third_party/utf8_range/naive.c
+compiling ./third_party/utf8_range/range2-neon.c
+compiling ./third_party/utf8_range/range2-sse.c
+linking shared-object google/protobuf_c.so
+
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/google-protobuf-3.22.2/ext/google/protobuf_c
+make DESTDIR\= sitearchdir\=./.gem.20260607-24112-bh1zfa sitelibdir\=./.gem.20260607-24112-bh1zfa install
+bash.exe: warning: could not find /tmp, please create!
+/usr/bin/install -c -m 0755 protobuf_c.so ./.gem.20260607-24112-bh1zfa/google

@@ -1,0 +1,28 @@
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/wdm-0.2.0/ext/wdm
+C:/Ruby31-x64/bin/ruby.exe -I C:/Ruby31-x64/lib/ruby/3.1.0 extconf.rb
+checking for -lkernel32... yes
+checking for windows.h... yes
+creating Makefile
+
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/wdm-0.2.0/ext/wdm
+make DESTDIR\= sitearchdir\=./.gem.20260607-24112-b2ri9l sitelibdir\=./.gem.20260607-24112-b2ri9l clean
+bash.exe: warning: could not find /tmp, please create!
+
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/wdm-0.2.0/ext/wdm
+make DESTDIR\= sitearchdir\=./.gem.20260607-24112-b2ri9l sitelibdir\=./.gem.20260607-24112-b2ri9l
+generating wdm_ext-x64-mingw-ucrt.def
+bash.exe: warning: could not find /tmp, please create!
+compiling entry.c
+compiling memory.c
+compiling monitor.c
+compiling queue.c
+compiling rb_change.c
+compiling rb_monitor.c
+compiling utils.c
+compiling wdm.c
+linking shared-object wdm_ext.so
+
+current directory: D:/Documents/Personal Webpage/AndrewQingHe.github.io/vendor/bundle/ruby/3.1.0/gems/wdm-0.2.0/ext/wdm
+make DESTDIR\= sitearchdir\=./.gem.20260607-24112-b2ri9l sitelibdir\=./.gem.20260607-24112-b2ri9l install
+bash.exe: warning: could not find /tmp, please create!
+/usr/bin/install -c -m 0755 wdm_ext.so ./.gem.20260607-24112-b2ri9l
