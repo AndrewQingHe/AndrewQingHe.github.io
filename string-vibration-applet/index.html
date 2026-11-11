@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eef3f1" />
+    <meta name="description" content="Draw the initial position and velocity of a fixed string, then watch it vibrate." />
+    <title>String Vibration</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <p class="eyebrow">Math 353 · The wave equation</p>
+        <h1>String vibration</h1>
+        <p class="subtitle">Give a fixed string its shape, its velocity, or both—then set it in motion.</p>
+      </header>
+
+      <section class="simulation-card" aria-label="String vibration simulation">
+        <div class="draw-toolbar" aria-label="Choose a function to draw">
+          <div class="draw-tabs" role="group" aria-label="Drawing mode">
+            <button class="draw-tab active" id="draw-position" type="button" aria-pressed="true">
+              <span class="swatch position"></span>Initial position <i>f(x)</i>
+              <span class="status" id="position-status">not drawn</span>
+            </button>
+            <button class="draw-tab" id="draw-velocity" type="button" aria-pressed="false">
+              <span class="swatch velocity"></span>Initial velocity <i>g(x)</i>
+              <span class="status" id="velocity-status">not drawn</span>
+            </button>
+          </div>
+          <button id="erase-profile" class="quiet-button" type="button">Clear selected</button>
+        </div>
+
+        <canvas id="simulation" aria-label="Draw the selected initial function here"></canvas>
+
+        <div class="legend" aria-hidden="true">
+          <span><i class="position-line"></i>initial position</span>
+          <span><i class="velocity-line"></i>initial velocity</span>
+          <span><i class="solution-line"></i>string at time t</span>
+        </div>
+
+        <div class="controls">
+          <label class="control"><span>Wave speed c&nbsp;&nbsp;&nbsp;<output id="speed-value">1.00</output></span><input id="speed" type="range" min="0.25" max="2.5" value="1" step="0.05" /></label>
+          <label class="control"><span>Fourier modes</span><input id="modes" type="number" min="4" max="100" value="40" step="1" /></label>
+          <label class="control"><span>Playback rate</span><select id="rate"><option value="0.25">¼×</option><option value="0.5">½×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label>
+          <button id="start" type="button">Start</button>
+          <button id="pause" type="button">Pause</button>
+          <button id="reset" type="button">Reset</button>
+          <button id="clear" type="button">Clear all</button>
+        </div>
+      </section>
+
+      <section class="reading" aria-live="polite">
+        <div><span>Time</span><strong id="time">0.000 s</strong></div>
+        <div><span>Boundary</span><strong>Fixed ends</strong></div>
+        <div><span>Model</span><strong>uₜₜ = c²uₓₓ</strong></div>
+        <p id="help-text">Draw <em>f(x)=u(0,x)</em>. Switch tabs to draw <em>g(x)=uₜ(0,x)</em>. An undrawn function is taken to be zero.</p>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

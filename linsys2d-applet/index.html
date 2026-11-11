@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eef3f1" />
+    <meta name="description" content="Enter a 2×2 matrix A and click in the phase plane to trace solutions of the linear system x' = Ax." />
+    <title>Planar Linear Systems</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <p class="eyebrow">Math 353 · Systems of first-order linear equations</p>
+        <h1>Linear systems in the plane</h1>
+        <p class="subtitle">Choose a 2×2 matrix <i>A</i>, then click anywhere in the <i>x</i><sub>1</sub><i>x</i><sub>2</sub>-plane to trace the solution of <b><i>x</i></b>′ = <i>A</i><b><i>x</i></b> that starts there.</p>
+      </header>
+
+      <section class="simulation-card" aria-label="Phase plane of a planar linear system">
+        <div class="workspace">
+          <div class="canvas-wrap">
+            <canvas id="phase" aria-label="Phase plane. Click to start a solution curve at that point."></canvas>
+          </div>
+
+          <aside class="side-panel" aria-label="System settings">
+            <p class="system"><b><i>x</i></b>′ = <i>A</i><b><i>x</i></b></p>
+
+            <div class="matrix-row">
+              <span class="matrix-label"><i>A</i> =</span>
+              <div class="matrix">
+                <span class="paren" aria-hidden="true">(</span>
+                <div class="entries">
+                  <input id="a11" type="number" min="-5" max="5" step="any" value="1" aria-label="entry a11" />
+                  <input id="a12" type="number" min="-5" max="5" step="any" value="0" aria-label="entry a12" />
+                  <input id="a21" type="number" min="-5" max="5" step="any" value="0" aria-label="entry a21" />
+                  <input id="a22" type="number" min="-5" max="5" step="any" value="1" aria-label="entry a22" />
+                </div>
+                <span class="paren" aria-hidden="true">)</span>
+              </div>
+            </div>
+            <p class="hint">Entries are kept between −5 and 5. Press Enter or click away to apply.</p>
+
+            <dl class="eigen" aria-live="polite">
+              <div><dt><i>λ</i><sub>1</sub> =</dt><dd id="lambda1">1</dd></div>
+              <div><dt><i>λ</i><sub>2</sub> =</dt><dd id="lambda2">1</dd></div>
+            </dl>
+
+            <div class="toggles">
+              <label class="toggle"><input id="show-field" type="checkbox" /> <span>direction field</span></label>
+              <label class="toggle"><input id="show-eigen" type="checkbox" /> <span>eigenvectors</span></label>
+              <p class="note" id="eigen-note" hidden></p>
+            </div>
+
+            <button id="clear" type="button">Clear curves</button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="reading" aria-live="polite">
+        <div><span>Trace</span><strong id="trace">2</strong></div>
+        <div><span>Determinant</span><strong id="det">1</strong></div>
+        <div><span>Origin is a</span><strong id="type">proper node</strong></div>
+        <p>Each click starts a solution at that point and traces it forward from <em>t</em> = 0 using the exact solution <em>x</em>(<em>t</em>) = <em>e<sup>At</sup></em><em>x</em>(0). The solid and dashed black lines show the eigenvector directions <em>ξ</em><sup>(1)</sup> and <em>ξ</em><sup>(2)</sup>; the red arrows show the direction field.</p>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>

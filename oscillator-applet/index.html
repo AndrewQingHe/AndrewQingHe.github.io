@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spring Oscillator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <p class="eyebrow">3.7 Mechanical and Electrical Vibrations</p>
+        <h1>Spring oscillator</h1>
+        <p class="subtitle">A vertical mass–spring system with an adjustable viscous damper.</p>
+      </header>
+
+      <section class="simulation-card" aria-label="Spring oscillator simulation">
+        <canvas id="simulation" aria-label="Animated mass spring system and displacement graph"></canvas>
+        <div class="controls">
+          <label class="control">
+            <span>Spring constant <output id="spring-value">1.0 N/m</output></span>
+            <input id="spring" type="range" min="1" max="10" value="1" step="1" />
+          </label>
+          <label class="control">
+            <span>Mass <output id="mass-value">0.1 kg</output></span>
+            <input id="mass" type="range" min="1" max="10" value="1" step="1" />
+          </label>
+          <label class="control">
+            <span>Damping strength <output id="damping-value">0.00 N·s/m</output></span>
+            <input id="damping" type="range" min="0" max="2" value="0" step="0.02" />
+          </label>
+          <label class="toggle"><input id="running" type="checkbox" checked /> <span>Run</span></label>
+          <label class="toggle"><input id="measure" type="checkbox" /> <span>Measure period</span></label>
+          <button id="reset" type="button">Reset motion</button>
+        </div>
+      </section>
+
+      <section class="reading" aria-live="polite">
+        <div><span>Period</span><strong id="period">1.987 s</strong></div>
+        <div><span>Frequency</span><strong id="frequency">0.503 Hz</strong></div>
+        <div><span>Motion</span><strong id="motion-type">Undamped</strong></div>
+        <p>Drag the mass up or down to set a new amplitude. Damping follows <em>m u″ + γ u′ + ku = 0</em>.</p>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
