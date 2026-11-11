@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heat Equation</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header>
+        <p class="eyebrow">Math 353 · The heat equation</p>
+        <h1>Heat flow</h1>
+        <p class="subtitle">Draw an initial temperature profile, then watch it diffuse.</p>
+      </header>
+
+      <section class="simulation-card" aria-label="Heat equation simulation">
+        <canvas id="simulation" aria-label="Draw the initial temperature curve here"></canvas>
+        <div class="controls">
+          <label class="control"><span>Diffusivity κ&nbsp;&nbsp;&nbsp;<output id="kappa-value">0.08</output></span><input id="kappa" type="range" min="0" max="0.20" value="0.08" step="0.01" /></label>
+          <label class="control"><span>Spatial step Δx</span><input id="dx" type="number" min="0.0025" max="0.25" value="0.02" step="0.005" /></label>
+          <label class="control"><span>Time step Δt</span><input id="dt" type="number" min="0.0001" max="1" value="0.01" step="0.005" /></label>
+          <label class="control"><span>Left boundary type</span><select id="left-type"><option value="dirichlet">Dirichlet</option><option value="neumann">Neumann</option></select></label>
+          <label class="control"><span id="left-boundary-label">Left boundary u(0)</span><input id="left-boundary" type="number" min="-1.5" max="1.5" value="0" step="0.1" /></label>
+          <label class="control"><span>Right boundary type</span><select id="right-type"><option value="dirichlet">Dirichlet</option><option value="neumann">Neumann</option></select></label>
+          <label class="control"><span id="right-boundary-label">Right boundary u(1)</span><input id="right-boundary" type="number" min="-1.5" max="1.5" value="0" step="0.1" /></label>
+          <button id="start" type="button">Start</button>
+          <button id="pause" type="button">Pause</button>
+          <button id="clear" type="button">Clear</button>
+        </div>
+      </section>
+
+      <section class="reading" aria-live="polite">
+        <div><span>Time</span><strong id="time">0.000 s</strong></div>
+        <div><span>Grid</span><strong id="grid">50 intervals</strong></div>
+        <div><span>Method</span><strong>Backward Euler</strong></div>
+        <p>Drag across the plot to draw <em>u(0,x)</em>. Choose Dirichlet values or Neumann derivatives independently at each endpoint. Multiple drawn values use the lowest; gaps copy from the left.</p>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
